@@ -14,6 +14,8 @@
             --depression: #2d3436; /* Black */
             --anger: #d63031;      /* Red */
             --bipolar: #6c5ce7;    /* Purple */
+            --navy-dark: #0a3d62;  /* Navy Blue for Global Chart */
+            --navy-light: #3c6382; /* Lighter Navy for bars */
         }
         
         html { scroll-behavior: smooth; }
@@ -83,16 +85,16 @@
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--anxiety);">
                         <strong>Massive Impact: 301 Million Cases</strong>
-                        Affecting a growing portion of the youth population, particularly within academic environments.
+                        Affecting a growing portion of the youth population.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--anxiety);">
                         <strong>Critical Onset Age: Before 24</strong>
-                        Studies indicate that the majority of anxiety disorders solidify during the transition into adulthood.
+                        Solidification during the transition into adulthood.
                     </div>
                 </div>
             </div>
             <div style="background: #e3f2fd; border-radius: 20px; padding: 30px; display: flex; align-items: center; justify-content: center;">
-                 <p style="font-weight: bold; color: var(--anxiety); text-align: center;">"Anxiety is not just a passing fear; it is a systemic brain response to persistent uncertainty."</p>
+                 <p style="font-weight: bold; color: var(--anxiety); text-align: center;">"Anxiety is a systemic brain response to persistent uncertainty."</p>
             </div>
         </section>
 
@@ -103,11 +105,11 @@
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--depression);">
                         <strong>WHO Statistics: 280 Million</strong>
-                        Depression is the leading cause of disability worldwide.
+                        Leading cause of disability worldwide.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--depression);">
                         <strong>Risk Factor: 1 in 2 People</strong>
-                        The risk of developing a mood disorder during a lifetime is exceptionally high.
+                        High lifetime risk for mood disorders.
                     </div>
                 </div>
             </div>
@@ -119,53 +121,43 @@
         <section id="anger" class="section-box anger-card">
             <div>
                 <h2 style="color: var(--anger);">Anger & Impulse</h2>
-                <p>Focusing on impulse control disorders and the management of chronic irritability.</p>
+                <p>Focusing on impulse control disorders.</p>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--anger);">
                         <strong>Neurobiology:</strong>
-                        Direct correlation with prefrontal cortex regulation and amygdala responses.
-                    </div>
-                    <div class="detail-item" style="border-left-color: var(--anger);">
-                        <strong>Manifestation:</strong>
-                        Intermittent Explosive Disorder often affects young adults.
+                        Correlation with prefrontal cortex and amygdala.
                     </div>
                 </div>
             </div>
-            <div style="background: #fff5f5; padding: 20px; border-radius: 15px; border: 2px dashed var(--anger); display: flex; flex-direction: column; justify-content: center;">
-                <h4 style="color: var(--anger); margin-top: 0;">Data Alert:</h4>
-                <p>Impulsivity is frequently the primary signal for more complex conditions.</p>
+            <div style="background: #fff5f5; padding: 20px; border-radius: 15px; border: 2px dashed var(--anger);">
+                <p style="color: var(--anger); font-weight: bold; text-align: center;">Impulsivity is a signal for complex conditions.</p>
             </div>
         </section>
 
         <section id="bipolar" class="section-box bipolar-card">
             <div>
                 <h2 style="color: var(--bipolar);">Bipolar Disorder</h2>
-                <p>Understanding the cyclical nature of mood regulation and neurotransmitter patterns.</p>
+                <p>Understanding cyclical mood regulation.</p>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--bipolar);">
                         <strong>Global Prevalence: 40 Million</strong>
-                        A complex disorder characterized by alternating manic and depressive episodes.
-                    </div>
-                    <div class="detail-item" style="border-left-color: var(--bipolar);">
-                        <strong>Diagnostic Research:</strong>
-                        Requires long-term tracking for accurate clinical intervention.
+                        Alternating manic and depressive episodes.
                     </div>
                 </div>
             </div>
-            <div style="background: #f3f0ff; border-radius: 20px; padding: 30px; display: flex; align-items: center; justify-content: center;">
-                <p style="font-weight: bold; color: var(--bipolar); text-align: center;">"Bipolarity is a spectrum of energy regulation, not just mood swings."</p>
+            <div style="background: #f3f0ff; border-radius: 20px; padding: 30px;">
+                <p style="font-weight: bold; color: var(--bipolar); text-align: center;">"A spectrum of energy regulation."</p>
            </div>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 MindMetric Hub - Independent Research Synthesis by Marine Siméon</p>
-        <p style="font-size: 0.7rem; opacity: 0.6;">Medical Disclaimer: This site is for informational purposes only and does not constitute medical advice. Consult a professional for diagnosis.</p>
+        <p>&copy; 2026 MindMetric Hub - Research by Marine Siméon</p>
     </footer>
 
     <script>
-        // Graphique 1: Global Prevalence (Bar Chart)
+        // GRAPHIQUE GLOBAL EN BLEU MARINE
         const ctxGlobal = document.getElementById('globalChart').getContext('2d');
         new Chart(ctxGlobal, {
             type: 'bar',
@@ -173,15 +165,33 @@
                 labels: ['Americas', 'Europe', 'Africa', 'West Pacific', 'SE Asia'],
                 datasets: [{
                     label: 'Prevalence %',
+                    // Dégradé de bleus marines/foncés pour chaque colonne
                     data: [15.2, 14.8, 10.1, 11.9, 12.5],
-                    backgroundColor: ['#0984e3', '#2d3436', '#d63031', '#6c5ce7', '#00b894'],
+                    backgroundColor: [
+                        '#0a3d62', // Navy Dark
+                        '#3c6382', // Navy Medium
+                        '#072c41', // Deep Dark
+                        '#4b7bec', // Strong Blue (différent de l'anxiété)
+                        '#1e3799'  // Royal Blue Dark
+                    ],
                     borderRadius: 8
                 }]
             },
-            options: { responsive: true, plugins: { legend: { display: false } } }
+            options: { 
+                responsive: true, 
+                plugins: { 
+                    legend: { display: false } 
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { font: { weight: 'bold' } }
+                    }
+                }
+            }
         });
 
-        // Graphique 2: Depression Trend (Line Chart)
+        // GRAPHIQUE DEPRESSION (Conservé tel quel car tu l'as aimé)
         const ctxDep = document.getElementById('depressionChart').getContext('2d');
         new Chart(ctxDep, {
             type: 'line',
