@@ -1,5 +1,141 @@
-<script>
-        // GRAPHIQUE GLOBAL : UNE SEULE COULEUR (NAVY) POUR LA COHÉRENCE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMetric | Global Research Hub by Marine Siméon</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #f8f9fa;
+            --text: #2d3436;
+            --anxiety: #0984e3;
+            --depression: #2d3436;
+            --anger: #d63031;
+            --bipolar: #6c5ce7;
+            --navy: #102754;
+        }
+        
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
+
+        nav { background: rgba(255,255,255,0.95); padding: 15px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; justify-content: center; gap: 20px; }
+        nav a { text-decoration: none; color: var(--text); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
+        nav a:hover { color: var(--anxiety); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+        header { text-align: center; padding: 80px 20px; background: white; border-bottom: 1px solid #eee; }
+        header h1 { font-size: 5rem; margin: 0; letter-spacing: -4px; }
+        .author-badge { color: var(--anxiety); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+
+        .section-box { 
+            background: white; border-radius: 25px; padding: 50px; margin: 40px 0; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+        }
+
+        .section-box h2 { font-size: 2.8rem; margin-top: 0; }
+        .detail-item { background: #f1f2f6; padding: 15px; border-radius: 12px; margin-bottom: 10px; border-left: 4px solid #ddd; }
+        .detail-item strong { display: block; color: var(--text); }
+
+        .anxiety-card { border-top: 10px solid var(--anxiety); }
+        .depression-card { border-top: 10px solid var(--depression); }
+        .anger-card { border-top: 10px solid var(--anger); }
+        .bipolar-card { border-top: 10px solid var(--bipolar); }
+
+        .chart-wrapper { max-width: 800px; margin: 20px auto; }
+
+        footer { background: var(--text); color: white; padding: 60px 20px; text-align: center; }
+        @media (max-width: 900px) { .section-box { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#global">GLOBAL DATA</a>
+        <a href="#anxiety">ANXIETY</a>
+        <a href="#depression">DEPRESSION</a>
+        <a href="#anger">IMPULSE</a>
+        <a href="#bipolar">BIPOLAR</a>
+    </nav>
+
+    <header>
+        <span class="author-badge">Independent Research Synthesis by Marine Siméon</span>
+        <h1>MindMetric.</h1>
+        <p>A centralized hub for global psychiatric data (WHO & Harvard Sources).</p>
+    </header>
+
+    <div class="container">
+
+        <section id="global" class="section-box" style="grid-template-columns: 1fr;">
+            <div style="text-align: center;">
+                <h2>Global Lifetime Prevalence</h2>
+                <p>WHO reports demonstrating statistical impact by region.</p>
+                <div class="chart-wrapper">
+                    <canvas id="globalChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="anxiety" class="section-box anxiety-card">
+            <div>
+                <h2 style="color: var(--anxiety);">Anxiety</h2>
+                <p>301 Million Cases worldwide.</p>
+                <div class="detail-item" style="border-left-color: var(--anxiety);">
+                    <strong>Academic Impact</strong>
+                    Significant correlation with youth academic environments.
+                </div>
+            </div>
+            <div style="background: #e3f2fd; border-radius: 20px; padding: 30px; display: flex; align-items: center; justify-content: center;">
+                 <p style="font-weight: bold; color: var(--anxiety); text-align: center;">"Brain response to uncertainty."</p>
+            </div>
+        </section>
+
+        <section id="depression" class="section-box depression-card">
+            <div>
+                <h2 style="color: var(--depression);">Clinical Depression</h2>
+                <p>Harvard Medical School clinical findings.</p>
+                <div class="chart-wrapper">
+                    <canvas id="depressionChart"></canvas>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <p>Leading cause of global disability.</p>
+            </div>
+        </section>
+
+        <section id="anger" class="section-box anger-card">
+            <div>
+                <h2 style="color: var(--anger);">Anger & Impulse</h2>
+                <p>Prefrontal cortex regulation data.</p>
+            </div>
+            <div style="background: #fff5f5; border-radius: 20px; padding: 30px; border: 2px dashed var(--anger);">
+                <p style="color: var(--anger); font-weight: bold; text-align: center;">Impulse control disorder markers.</p>
+            </div>
+        </section>
+
+        <section id="bipolar" class="section-box bipolar-card">
+            <div>
+                <h2 style="color: var(--bipolar);">Bipolar Disorder</h2>
+                <p>Cyclical mood regulation patterns.</p>
+            </div>
+            <div style="background: #f3f0ff; border-radius: 20px; padding: 30px;">
+                <p style="font-weight: bold; color: var(--bipolar); text-align: center;">Energy regulation spectrum.</p>
+           </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 MindMetric Hub - Marine Siméon</p>
+    </footer>
+
+    <script>
+        // Graphique Global (Colonnes Bleu Marine unies)
         const ctxGlobal = document.getElementById('globalChart').getContext('2d');
         new Chart(ctxGlobal, {
             type: 'bar',
@@ -8,28 +144,14 @@
                 datasets: [{
                     label: 'Prevalence %',
                     data: [15.2, 14.8, 10.1, 11.9, 12.5],
-                    // Bleu Marine unique pour toutes les colonnes
                     backgroundColor: '#102754', 
-                    borderColor: '#0a1a38',
-                    borderWidth: 1,
                     borderRadius: 5
                 }]
             },
-            options: { 
-                responsive: true, 
-                plugins: { 
-                    legend: { display: false } 
-                },
-                scales: {
-                    y: { 
-                        beginAtZero: true,
-                        title: { display: true, text: 'Percentage (%)' }
-                    }
-                }
-            }
+            options: { responsive: true, plugins: { legend: { display: false } } }
         });
 
-        // GRAPHIQUE DEPRESSION (Ligne noire)
+        // Graphique Dépression
         const ctxDep = document.getElementById('depressionChart').getContext('2d');
         new Chart(ctxDep, {
             type: 'line',
@@ -39,10 +161,12 @@
                     label: 'Impact Score',
                     data: [65, 72, 85, 91],
                     borderColor: '#2d3436',
-                    backgroundColor: 'rgba(45, 52, 54, 0.05)',
-                    fill: true,
+                    fill: false,
                     tension: 0.3
                 }]
-            }
+            },
+            options: { responsive: true }
         });
     </script>
+</body>
+</html>
