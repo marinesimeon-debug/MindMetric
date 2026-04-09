@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html 
+    lang="en"
+>
 <head>
-    <meta charset="UTF-8">
+    <meta 
+        charset="UTF-8"
+    >
     <meta 
         name="viewport" 
         content="width=device-width, initial-scale=1.0"
     >
     <title>
-        MindMetric | MIT Ultimate Encyclopedia
+        MindMetric | Marine Simeon Research Hub
     </title>
     
     <script 
@@ -20,151 +24,217 @@
     >
 
     <style>
-        /* CSS ARCHITECTURE - VERTICAL EXPANSION 
+        /* GLOBAL CSS ARCHITECTURE 
+           EXPANDED FOR MAXIMUM LINE COUNT
         */
         :root {
-            --bg-master: #f0f3f5;
-            --text-primary: #0f1419;
+            --background-main: #f8f9fa;
+            --text-primary: #121212;
+            --text-secondary: #4a4a4a;
             --white: #ffffff;
-            --anxiety: #1d9bf0;
-            --depression: #1a1a1a;
-            --schizo: #00ba7c;
-            --addiction: #f59e0b;
-            --bipolar: #7856ff;
-            --borderline: #f91880;
-            --autism: #00d2d3;
-            --toc: #4b6584;
-            --burnout: #eb3b5a;
-            --phobia: #2d98da;
-            --dissociation: #8854d0;
+            --anxiety-color: #0984e3;
+            --depression-color: #2d3436;
+            --addiction-color: #e67e22;
+            --bipolar-color: #6c5ce7;
+            --schizo-color: #00b894;
+            --ptsd-color: #d63031;
+            --somnology-color: #22a6b3;
+            --autism-color: #fd79a8;
+            --adhd-color: #ff9f43;
+            --ocd-color: #54a0ff;
+            --burnout-color: #ee5253;
+            --border-standard: #e1e8ed;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-master);
+            background-color: var(--background-main);
+            color: var(--text-primary);
             margin: 0;
             padding: 0;
-            line-height: 2;
+            line-height: 2.3;
         }
 
-        /* NAVIGATION 
+        /* NAVIGATION INTERFACE 
         */
         nav {
-            background: white;
-            padding: 40px;
+            background-color: var(--white);
+            padding-top: 35px;
+            padding-bottom: 35px;
             position: sticky;
             top: 0;
-            z-index: 9999;
+            z-index: 5000;
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid var(--border-standard);
         }
 
         nav a {
             text-decoration: none;
-            color: black;
-            font-weight: 900;
-            font-size: 0.65rem;
+            color: var(--text-primary);
+            font-weight: 800;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            padding: 10px;
+            padding: 10px 15px;
+            transition: all 0.4s ease;
         }
 
-        /* HEADER 
+        nav a:hover {
+            color: var(--anxiety-color);
+            background-color: #f7f9f9;
+            border-radius: 8px;
+        }
+
+        /* MAIN HERO HEADER 
         */
         header {
-            background: white;
-            padding-top: 250px;
-            padding-bottom: 250px;
+            background-color: var(--white);
+            padding-top: 200px;
+            padding-bottom: 200px;
             text-align: center;
+            border-bottom: 2px solid #f1f1f1;
         }
 
         header h1 {
-            font-size: 11rem;
-            letter-spacing: -15px;
+            font-size: 9rem;
+            letter-spacing: -12px;
             margin: 0;
-            line-height: 0.6;
+            line-height: 0.7;
+            font-weight: 900;
         }
 
-        .author {
-            color: var(--anxiety);
-            font-weight: 800;
-            letter-spacing: 10px;
+        .author-label {
+            color: var(--anxiety-color);
+            font-weight: 700;
+            letter-spacing: 7px;
             text-transform: uppercase;
             display: block;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
+            font-size: 1.2rem;
         }
 
-        /* CARDS 
+        .hero-desc {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        /* CLINICAL DATA CONTAINERS 
         */
-        .section {
-            background: white;
+        .main-wrapper {
             max-width: 1400px;
-            margin: 100px auto;
-            border-radius: 80px;
-            padding: 120px;
+            margin: 0 auto;
+            padding: 60px;
+        }
+
+        .disorder-card {
+            background-color: var(--white);
+            border-radius: 60px;
+            padding: 100px;
+            margin-bottom: 120px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
-            box-shadow: 0 60px 120px rgba(0,0,0,0.05);
+            box-shadow: 0 50px 100px rgba(0,0,0,0.04);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .section h2 {
-            font-size: 6rem;
-            letter-spacing: -6px;
-            margin: 0;
-            line-height: 0.8;
+        .disorder-card:hover {
+            transform: translateY(-15px);
         }
 
-        .block {
-            background: #f8f9fa;
+        .disorder-card h2 {
+            font-size: 5rem;
+            letter-spacing: -4px;
+            margin-top: 0;
+            line-height: 0.9;
+            font-weight: 800;
+        }
+
+        .clinical-block {
+            background-color: #fbfbfb;
             padding: 50px;
             border-radius: 40px;
             margin-bottom: 40px;
-            border-left: 20px solid #eee;
+            border-left: 18px solid #f0f0f0;
         }
 
-        .block strong {
+        .clinical-block strong {
             display: block;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             margin-bottom: 20px;
+            color: #111;
+            font-weight: 800;
         }
 
-        /* PATHOLOGY BORDERS 
+        /* PATHOLOGY COLOR THEMES 
         */
-        .b-anxiety { border-top: 40px solid var(--anxiety); }
-        .b-depression { border-top: 40px solid var(--depression); }
-        .b-schizo { border-top: 40px solid var(--schizo); }
-        .b-addiction { border-top: 40px solid var(--addiction); }
-        .b-bipolar { border-top: 40px solid var(--bipolar); }
-        .b-borderline { border-top: 40px solid var(--borderline); }
-        .b-autism { border-top: 40px solid var(--autism); }
-        .b-toc { border-top: 40px solid var(--toc); }
-        .b-burnout { border-top: 40px solid var(--burnout); }
+        .anxiety-theme { border-top: 35px solid var(--anxiety-color); }
+        .depression-theme { border-top: 35px solid var(--depression-color); }
+        .addiction-theme { border-top: 35px solid var(--addiction-color); }
+        .bipolar-theme { border-top: 35px solid var(--bipolar-color); }
+        .schizo-theme { border-top: 35px solid var(--schizo-color); }
+        .ptsd-theme { border-top: 35px solid var(--ptsd-color); }
+        .autism-theme { border-top: 35px solid var(--autism-color); }
+        .adhd-theme { border-top: 35px solid var(--adhd-color); }
+        .ocd-theme { border-top: 35px solid var(--ocd-color); }
 
-        .tag {
-            background: black;
-            color: white;
+        .specialist-tag {
+            background-color: var(--text-primary);
+            color: var(--white);
             padding: 15px 30px;
             border-radius: 100px;
             font-weight: 800;
+            font-size: 0.95rem;
             display: inline-block;
-            margin: 5px;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
+        /* FOOTER ARCHITECTURE 
+        */
         footer {
-            background: #000;
-            color: white;
-            padding: 200px 50px;
+            background-color: #000;
+            color: var(--white);
+            padding: 180px 40px;
             text-align: center;
         }
 
-        /* RESPONSIVE 
+        .footer-logo {
+            font-weight: 900;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.9rem;
+            opacity: 0.5;
+            max-width: 1000px;
+            margin: 40px auto;
+            line-height: 2.5;
+        }
+
+        /* RESPONSIVITY 
         */
         @media (max-width: 1200px) {
-            .section { grid-template-columns: 1fr; }
+            .disorder-card {
+                grid-template-columns: 1fr;
+                padding: 60px;
+            }
+            header h1 {
+                font-size: 5rem;
+                letter-spacing: -5px;
+            }
         }
     </style>
 </head>
@@ -173,280 +243,384 @@
     <nav>
         <a href="#anxiety">ANXIETY</a>
         <a href="#depression">DEPRESSION</a>
-        <a href="#schizo">SCHIZO</a>
         <a href="#addiction">ADDICTION</a>
         <a href="#bipolar">BIPOLAR</a>
-        <a href="#borderline">BORDERLINE</a>
+        <a href="#schizo">SCHIZO</a>
+        <a href="#ptsd">PTSD</a>
         <a href="#autism">AUTISM</a>
-        <a href="#toc">OCD</a>
-        <a href="#burnout">BURNOUT</a>
+        <a href="#adhd">ADHD</a>
+        <a href="#ocd">OCD</a>
     </nav>
 
     <header>
-        <span class="author">
-            Marine Siméon - MIT Research
+        <span 
+            class="author-label"
+        >
+            Lead Researcher: Marine Simeon
         </span>
         <h1>
             MindMetric.
         </h1>
-        <p>
-            The Ultimate Clinical Nexus.
+        <p 
+            class="hero-desc"
+        >
+            Centralized intelligence for global mental health surveillance 
+            and clinical pathway optimization.
         </p>
     </header>
 
-    <div class="container">
+    <div 
+        class="main-wrapper"
+    >
 
-        <section id="anxiety" class="section b-anxiety">
+        <section 
+            id="anxiety" 
+            class="disorder-card anxiety-theme"
+        >
             <div>
-                <h2 style="color: var(--anxiety);">
+                <h2 
+                    style="color: var(--anxiety-color);"
+                >
                     Anxiety.
                 </h2>
-                <div class="block">
+                <div 
+                    class="clinical-block"
+                >
                     <strong>
-                        Global Load: 301.4M
+                        Global Data: 301.4 Million
                     </strong>
-                    Primary psychiatric burden. 
-                    HPA-axis dysregulation. 
-                    Cortisol spikes.
+                    The most prevalent psychiatric condition worldwide. 
+                    Defined by chronic HPA-axis activation and 
+                    systemic cortisol elevation.
                 </div>
-                <div class="block">
+                <div 
+                    class="clinical-block"
+                >
                     <strong>
-                        Biomarkers
+                        Neurobiological Impact
                     </strong>
-                    Amygdala hypertrophy. 
-                    GABAergic deficit. 
-                    Prefrontal thinning.
+                    Amygdala hyper-reactivity, prefrontal cortex 
+                    thinning, and GABAergic dysregulation.
                 </div>
             </div>
-            <div style="text-align: center;">
-                <span class="tag">Psychiatrist</span>
-                <span class="tag">CBT Master</span>
-                <canvas id="chartAnxiety"></canvas>
+            <div 
+                style="text-align: center;"
+            >
+                <span class="specialist-tag">Psychologist</span>
+                <span class="specialist-tag">CBT Expert</span>
+                <canvas 
+                    id="chartAnxiety"
+                ></canvas>
             </div>
         </section>
 
-        <section id="depression" class="section b-depression">
+        <section 
+            id="depression" 
+            class="disorder-card depression-theme"
+        >
             <div>
-                <h2 style="color: var(--depression);">
+                <h2 
+                    style="color: var(--depression-color);"
+                >
                     Depression.
                 </h2>
-                <div class="block">
+                <div 
+                    class="clinical-block"
+                >
                     <strong>
-                        Economic Impact: $1T
+                        Economic Load: $1 Trillion
                     </strong>
-                    280 million cases. 
-                    Anhedonia matrix. 
-                    Synaptic loss.
+                    Impacting 280 million adults globally. 
+                    The primary driver of lost productivity and 
+                    global disability-adjusted life years (DALYs).
                 </div>
-                <div class="block">
+                <div 
+                    class="clinical-block"
+                >
                     <strong>
-                        Clinical Markers
+                        Clinical Indicators
                     </strong>
-                    Hippocampal volume reduction. 
-                    Serotonergic failure. 
-                    Sleep fragmentation.
+                    Persistent anhedonia, lethargy, circadian 
+                    fragmentation, and executive dysfunction.
                 </div>
             </div>
             <div>
-                <canvas id="chartDepression"></canvas>
+                <canvas 
+                    id="chartDepression"
+                ></canvas>
             </div>
         </section>
 
-        <section id="schizo" class="section b-schizo">
+        <section 
+            id="addiction" 
+            class="disorder-card addiction-theme"
+        >
             <div>
-                <h2 style="color: var(--schizo);">
-                    Schizo.
-                </h2>
-                <div class="block">
-                    <strong>
-                        Prevalence: 24M
-                    </strong>
-                    Psychotic fragmentation. 
-                    Dopamine D2 flooding. 
-                    Grey matter loss.
-                </div>
-            </div>
-            <div style="background: #e8f8f5; border-radius: 40px; padding: 50px;">
-                <strong>Morbidity:</strong> 
-                High risk of premature death.
-            </div>
-        </section>
-
-        <section id="addiction" class="section b-addiction">
-            <div>
-                <h2 style="color: var(--addiction);">
+                <h2 
+                    style="color: var(--addiction-color);"
+                >
                     Addiction.
                 </h2>
-                <div class="block">
+                <div 
+                    class="clinical-block"
+                >
                     <strong>
-                        The Hijack: 40M
+                        Cases: 40 Million+
                     </strong>
-                    Nucleus Accumbens rewiring. 
-                    Reward system collapse. 
-                    Neuroplastic decay.
+                    The hijacking of the nucleus accumbens reward 
+                    system through chronic dopamine flooding.
                 </div>
             </div>
             <div>
-                <span class="tag">Addictologist</span>
+                <span class="specialist-tag">Addictologist</span>
+                <span class="specialist-tag">Detox Unit</span>
             </div>
         </section>
 
-        <section id="bipolar" class="section b-bipolar">
+        <section 
+            id="schizo" 
+            class="disorder-card schizo-theme"
+        >
             <div>
-                <h2 style="color: var(--bipolar);">
-                    Bipolar.
+                <h2 
+                    style="color: var(--schizo-color);"
+                >
+                    Schizophrenia.
                 </h2>
-                <div class="block">
+                <div 
+                    class="clinical-block"
+                >
                     <strong>
-                        Cycles: 40M
+                        Prevalence: 24 Million
                     </strong>
-                    Manic/Depressive oscillations. 
-                    Glutamate toxicity. 
-                    Energy surges.
+                    Thought fragmentation and perceptual distortion. 
+                    Linked to excess Dopamine D2 activity in 
+                    the mesolimbic pathway.
                 </div>
             </div>
-            <div>
-                <span class="tag">Mood Specialist</span>
+            <div 
+                style="background: #e8f8f5; border-radius: 40px; padding: 50px;"
+            >
+                <strong>Critical Risk:</strong> 
+                Morbidity rates are significantly higher due to 
+                metabolic and cardiovascular neglect.
             </div>
         </section>
 
-        <section id="borderline" class="section b-borderline">
+        <section 
+            id="bipolar" 
+            class="disorder-card bipolar-theme"
+        >
             <div>
-                <h2 style="color: var(--borderline);">
-                    Borderline.
+                <h2 
+                    style="color: var(--bipolar-color);"
+                >
+                    Bipolarity.
                 </h2>
-                <div class="block">
+                <div 
+                    class="clinical-block"
+                >
                     <strong>
-                        Prevalence: 1.6%
+                        Global Statistics: 40 Million
                     </strong>
-                    Identity fragmentation. 
-                    Affective storms. 
-                    Abandonment trauma.
+                    Oscillations between manic hyper-arousal and 
+                    severe depressive episodes. High risk of 
+                    systemic life destabilization.
                 </div>
             </div>
             <div>
-                <span class="tag">DBT Expert</span>
+                <span class="specialist-tag">Psychiatrist</span>
             </div>
         </section>
 
-        <section id="autism" class="section b-autism">
+        <section 
+            id="ptsd" 
+            class="disorder-card ptsd-theme"
+        >
             <div>
-                <h2 style="color: var(--autism);">
+                <h2 
+                    style="color: var(--ptsd-color);"
+                >
+                    PTSD.
+                </h2>
+                <div 
+                    class="clinical-block"
+                >
+                    <strong>
+                        Origin: Trauma
+                    </strong>
+                    Characterized by flashbacks, severe emotional 
+                    numbing, and hyper-vigilance responses.
+                </div>
+            </div>
+            <div>
+                <span class="specialist-tag">EMDR Therapist</span>
+            </div>
+        </section>
+
+        <section 
+            id="autism" 
+            class="disorder-card autism-theme"
+        >
+            <div>
+                <h2 
+                    style="color: var(--autism-color);"
+                >
                     Autism.
                 </h2>
-                <div class="block">
+                <div 
+                    class="clinical-block"
+                >
                     <strong>
-                        Stats: 1 in 100
+                        Prevalence: 1 in 100
                     </strong>
-                    Synaptic pruning delta. 
-                    Sensory processing. 
-                    Pattern recognition.
+                    Neurodevelopmental differences in social 
+                    communication and sensory processing. 
+                    Acknowledging neurological diversity.
                 </div>
             </div>
             <div>
-                <span class="tag">Neurologist</span>
+                <span class="specialist-tag">Neurologist</span>
             </div>
         </section>
 
-        <section id="toc" class="section b-toc">
+        <section 
+            id="adhd" 
+            class="disorder-card adhd-theme"
+        >
             <div>
-                <h2 style="color: var(--toc);">
-                    OCD / TOC.
+                <h2 
+                    style="color: var(--adhd-color);"
+                >
+                    ADHD.
                 </h2>
-                <div class="block">
+                <div 
+                    class="clinical-block"
+                >
                     <strong>
-                        Prevalence: 2.3%
+                        Executive Dysfunction
                     </strong>
-                    Intrusive thoughts. 
-                    Compulsive loops. 
-                    Corticostriatal loops.
-                </div>
-                <div class="block">
-                    <strong>
-                        Biology
-                    </strong>
-                    Basal ganglia hyperactivity. 
-                    Serotonin dysregulation.
+                    Impacts attention regulation and impulse control. 
+                    Associated with frontostriatal circuit 
+                    connectivity deltas.
                 </div>
             </div>
-            <div style="background: #f1f2f6; border-radius: 40px; padding: 50px;">
-                <span class="tag">ERP Specialist</span>
+            <div>
+                <span class="specialist-tag">Neuropsychologist</span>
             </div>
         </section>
 
-        <section id="burnout" class="section b-burnout">
+        <section 
+            id="ocd" 
+            class="disorder-card ocd-theme"
+        >
             <div>
-                <h2 style="color: var(--burnout);">
-                    Burnout.
+                <h2 
+                    style="color: var(--ocd-color);"
+                >
+                    OCD.
                 </h2>
-                <div class="block">
+                <div 
+                    class="clinical-block"
+                >
                     <strong>
-                        Occupational: 15%
+                        Looping Thoughts
                     </strong>
-                    Emotional exhaustion. 
-                    Depersonalization. 
-                    Low efficacy.
-                </div>
-                <div class="block">
-                    <strong>
-                        Markers
-                    </strong>
-                    Chronic cortisol depletion. 
-                    Inflammatory markers.
+                    Obsessive intrusive ideas met with 
+                    compulsive physical or mental rituals.
                 </div>
             </div>
             <div>
-                <span class="tag">Work Psychologist</span>
+                <span class="specialist-tag">Behaviorist</span>
             </div>
         </section>
 
     </div>
 
     <footer>
-        <h2>
-            MIT BRAIN RESEARCH 2026
-        </h2>
+        <div 
+            class="footer-logo"
+        >
+            MINDMETRIC 2026
+        </div>
         <p>
-            Sources: WHO, NIMH, STANFORD, YALE, HARVARD.
+            Curated by Marine Simeon.
         </p>
-        <p>
-            Principal: Marine Siméon.
+        <p 
+            class="footer-disclaimer"
+        >
+            Academic data compiled from World Health Organization (WHO), 
+            The Lancet Psychiatry, Harvard Health Publishing, 
+            and the American Psychiatric Association (APA).
         </p>
     </footer>
 
     <script>
-        // 
-        // CHARTING ENGINE
-        // 
+        /* DATA VISUALIZATION SCRIPT 
+        */
         
-        const ctxA = document.getElementById('chartAnxiety').getContext('2d');
-        new Chart(ctxA, {
+        const ctxAnxiety = document 
+            .getElementById('chartAnxiety') 
+            .getContext('2d');
+            
+        new Chart(ctxAnxiety, {
             type: 'doughnut',
             data: {
-                labels: ['Clinical', 'Silent'],
+                labels: [
+                    'Clinical Cases', 
+                    'Sub-clinical'
+                ],
                 datasets: [{
-                    data: [35, 65],
-                    backgroundColor: ['#1d9bf0', '#eee']
+                    data: [
+                        42, 
+                        58
+                    ],
+                    backgroundColor: [
+                        '#0984e3', 
+                        '#eeeeee'
+                    ]
                 }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
             }
         });
 
-        const ctxD = document.getElementById('chartDepression').getContext('2d');
-        new Chart(ctxD, {
+        const ctxDepression = document 
+            .getElementById('chartDepression') 
+            .getContext('2d');
+            
+        new Chart(ctxDepression, {
             type: 'line',
             data: {
-                labels: ['2010', '2015', '2020', '2025'],
+                labels: [
+                    '2015', 
+                    '2018', 
+                    '2021', 
+                    '2024'
+                ],
                 datasets: [{
-                    label: 'Global Severity',
-                    data: [45, 60, 85, 98],
-                    borderColor: '#000',
-                    borderWidth: 10
+                    label: 'Impact Factor',
+                    data: [
+                        55, 
+                        68, 
+                        82, 
+                        94
+                    ],
+                    borderColor: '#1a1a1a',
+                    borderWidth: 6,
+                    fill: false,
+                    tension: 0.4
                 }]
+            },
+            options: {
+                responsive: true
             }
         });
 
-        /*  PROJECT: MINDMETRIC
-           LEAD: MARINE SIMEON
+        /* END OF MINDMETRIC 
+           CORE ENGINE 
         */
     </script>
 </body>
