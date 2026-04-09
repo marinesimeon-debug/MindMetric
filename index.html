@@ -11,7 +11,7 @@
         content="width=device-width, initial-scale=1.0"
     >
     <title>
-        MindMetric | Global Research Hub by Marine Siméon
+        MindMetric | Expert Research Hub by Marine Siméon
     </title>
     
     <script 
@@ -23,7 +23,7 @@
     >
     
     <style>
-        /* CSS ARCHITECTURE - STRICTLY FOLLOWING MARINE SIMEON'S BASE */
+        /* BASE THEME - MARINE SIMÉON ORIGINAL */
         :root {
             --bg: #f8f9fa;
             --text: #2d3436;
@@ -34,423 +34,261 @@
             --navy: #102754;
             --schizo: #00b894;
             --addiction: #e67e22;
-            --burnout: #fd9644;
             --adhd: #4b6584;
-            --autism: #2bcbba;
-            --ptsd: #eb3b5a;
         }
         
-        html { 
-            scroll-behavior: smooth; 
-        }
-
+        html { scroll-behavior: smooth; }
         body { 
             font-family: 'Inter', sans-serif; 
             background-color: var(--bg); 
             color: var(--text); 
             margin: 0; 
-            line-height: 1.8; 
+            line-height: 1.7; 
         }
 
-        /* NAVIGATION BAR */
         nav { 
             background: rgba(255,255,255,0.98); 
-            padding: 20px; 
+            padding: 15px; 
             position: sticky; 
             top: 0; 
             z-index: 1000; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
             display: flex; 
             justify-content: center; 
-            gap: 15px; 
-            flex-wrap: wrap;
+            gap: 20px;
         }
 
         nav a { 
             text-decoration: none; 
             color: var(--text); 
             font-weight: 700; 
-            font-size: 0.7rem; 
+            font-size: 0.75rem; 
             text-transform: uppercase; 
-            letter-spacing: 1.5px;
-            transition: 0.3s;
+            letter-spacing: 1px;
         }
 
-        nav a:hover { 
-            color: var(--anxiety); 
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
 
-        .container { 
-            max-width: 1300px; 
-            margin: 0 auto; 
-            padding: 40px 20px; 
-        }
-
-        /* HEADER SECTION */
         header { 
             text-align: center; 
-            padding: 150px 20px; 
+            padding: 140px 20px; 
             background: white; 
             border-bottom: 1px solid #eee; 
         }
 
-        header h1 { 
-            font-size: 6rem; 
-            margin: 0; 
-            letter-spacing: -6px; 
-            line-height: 0.85; 
-        }
+        header h1 { font-size: 5.5rem; margin: 0; letter-spacing: -5px; line-height: 0.9; }
 
-        .author-badge { 
-            color: var(--anxiety); 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            letter-spacing: 4px; 
-            font-size: 1rem; 
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        /* SECTION BOXES - DESIGN REPLICATED FROM ORIGINAL */
         .section-box { 
             background: white; 
-            border-radius: 40px; 
-            padding: 80px; 
-            margin: 60px 0; 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.03);
+            border-radius: 30px; 
+            padding: 60px; 
+            margin: 50px 0; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
             display: grid; 
-            grid-template-columns: 1.2fr 0.8fr; 
-            gap: 60px;
-            border: 1px solid rgba(0,0,0,0.02);
+            grid-template-columns: 1fr 1fr; 
+            gap: 50px;
         }
 
-        .section-box h2 { 
-            font-size: 3.5rem; 
-            margin-top: 0; 
-            margin-bottom: 30px; 
-            letter-spacing: -2px;
-        }
-        
         .detail-item { 
-            background: #fbfbfc; 
-            padding: 35px; 
-            border-radius: 20px; 
-            margin-bottom: 30px; 
-            border-left: 8px solid #ddd; 
-            transition: 0.4s;
+            background: #f8f9fa; 
+            padding: 25px; 
+            border-radius: 15px; 
+            margin-bottom: 25px; 
+            border-left: 6px solid #ddd; 
         }
 
-        .detail-item:hover {
-            transform: scale(1.02);
-            background: #ffffff;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .detail-item strong { 
-            display: block; 
-            color: var(--text); 
-            font-size: 1.3rem; 
-            margin-bottom: 12px; 
-        }
-
-        .source-tag { 
-            font-size: 0.7rem; 
-            color: #b2bec3; 
-            text-transform: uppercase; 
-            font-weight: 800; 
-            margin-top: 20px; 
-            display: block;
-            letter-spacing: 1px;
-        }
+        .detail-item strong { display: block; color: var(--text); font-size: 1.1rem; margin-bottom: 8px; }
 
         .specialist-badge { 
             display: inline-block; 
             background: var(--text); 
             color: white; 
-            padding: 10px 22px; 
-            border-radius: 40px; 
-            font-size: 0.8rem; 
-            margin-top: 15px; 
-            font-weight: 800; 
-            margin-right: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        /* BORDERS PER CATEGORY */
-        .anxiety-card { border-top: 15px solid var(--anxiety); }
-        .depression-card { border-top: 15px solid var(--depression); }
-        .anger-card { border-top: 15px solid var(--anger); }
-        .bipolar-card { border-top: 15px solid var(--bipolar); }
-        .schizo-card { border-top: 15px solid var(--schizo); }
-        .addiction-card { border-top: 15px solid var(--addiction); }
-        .burnout-card { border-top: 15px solid var(--burnout); }
-        .adhd-card { border-top: 15px solid var(--adhd); }
-        .autism-card { border-top: 15px solid var(--autism); }
-
-        .quote-box {
+            padding: 8px 18px; 
             border-radius: 30px; 
-            padding: 50px; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center;
-            text-align: center;
+            font-size: 0.8rem; 
+            margin-top: 10px; 
+            font-weight: 700; 
         }
 
-        footer { 
-            background: var(--text); 
-            color: white; 
-            padding: 120px 20px; 
-            text-align: center; 
-        }
-        
-        @media (max-width: 1000px) { 
-            .section-box { 
-                grid-template-columns: 1fr; 
-                padding: 40px; 
-            } 
-        }
+        /* CARDS BORDERS */
+        .anxiety-card { border-top: 12px solid var(--anxiety); }
+        .depression-card { border-top: 12px solid var(--depression); }
+        .schizo-card { border-top: 12px solid var(--schizo); }
+        .bipolar-card { border-top: 12px solid var(--bipolar); }
+
+        footer { background: var(--text); color: white; padding: 80px 20px; text-align: center; }
+
+        @media (max-width: 950px) { .section-box { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#global">GLOBAL ANALYSIS</a>
         <a href="#anxiety">ANXIETY</a>
         <a href="#depression">DEPRESSION</a>
-        <a href="#anger">IMPULSE</a>
-        <a href="#bipolar">BIPOLAR</a>
         <a href="#schizo">SCHIZOPHRENIA</a>
-        <a href="#addiction">ADDICTION</a>
-        <a href="#adhd">ADHD</a>
-        <a href="#burnout">BURNOUT</a>
+        <a href="#bipolar">BIPOLAR</a>
     </nav>
 
     <header>
-        <span class="author-badge">
-            Advanced Clinical Research by Marine Siméon
-        </span>
+        <span style="color:var(--anxiety); font-weight:800; letter-spacing:3px; text-transform:uppercase;">Deep Clinical Analysis</span>
         <h1>MindMetric.</h1>
-        <p>A multi-dimensional mapping of global psychiatric pathologies, neurobiological frameworks, and diagnostic pathways.</p>
+        <p>Curated by Marine Siméon. Advanced Psychiatric Prevalence Study.</p>
     </header>
 
     <div class="container">
-
-        <section id="global" class="section-box" style="grid-template-columns: 1fr;">
-            <div style="text-align: center;">
-                <h2>Epidemiological Surveillance</h2>
-                <p style="max-width: 850px; margin: 0 auto 50px; font-size: 1.1rem; color: #636e72;">
-                    The 2026 Global Mental Health Report indicates a 13% increase in diagnosed mental conditions over the last decade. 
-                    This increase is attributed to both rising environmental stressors and improved clinical screening tools.
-                </p>
-                <div style="max-width: 1000px; margin: auto;">
-                    <canvas id="globalChart"></canvas>
-                </div>
-                <span class="source-tag">Source: World Health Organization (WHO) - Global Health Observatory</span>
-            </div>
-        </section>
 
         <section id="anxiety" class="section-box anxiety-card">
             <div>
                 <h2 style="color: var(--anxiety);">Anxiety Disorders</h2>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--anxiety);">
-                        <strong>Mechanism: Amygdala Hyper-Reactivity</strong>
-                        Anxiety is driven by an overactive fear-processing center (Amygdala) and a failure of the Prefrontal Cortex to down-regulate the survival response.
+                        <strong>Neuro-Biological Core: Axis HPA</strong>
+                        Dysregulation of the Hypothalamic-Pituitary-Adrenal (HPA) axis leads to sustained cortisol elevation, inhibiting neurogenesis in the hippocampus.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--anxiety);">
-                        <strong>Pathological Sub-types</strong>
-                        Includes Generalized Anxiety Disorder (GAD), Panic Disorder (PD), Social Anxiety (SAD), and Specific Phobias. 
+                        <strong>Comorbidity & Risk</strong>
+                        70% of individuals with GAD (Generalized Anxiety Disorder) also meet the criteria for Major Depressive Disorder at some point in their life.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--anxiety);">
-                        <strong>Prevalence: 1 in 13 People</strong>
-                        The most frequent mental disorder category globally. High correlation with gastrointestinal issues and sleep fragmentation.
+                        <strong>Symptomatic Spectrum</strong>
+                        Hyper-vigilance, somatic autonomic arousal (tremors, palpitations), and cognitive avoidance of perceived future threats.
                     </div>
                 </div>
             </div>
-            <div class="quote-box" style="background: #e3f2fd;">
-                <p style="font-weight: 800; color: var(--anxiety); font-size: 1.4rem;">Clinical Interventions</p>
-                <p>Focus on Cognitive Reframing and Exposure Therapy (ERP).</p>
-                <div style="margin-bottom: 20px;">
+            <div style="text-align:center;">
+                <canvas id="anxietyExpertChart"></canvas>
+                <div style="margin-top:20px;">
                     <span class="specialist-badge">Clinical Psychologist</span>
-                    <span class="specialist-badge">Neuro-Feedback expert</span>
+                    <span class="specialist-badge">Pharmacotherapist</span>
                 </div>
-                <canvas id="anxietyChart"></canvas>
             </div>
         </section>
 
         <section id="depression" class="section-box depression-card">
             <div>
-                <h2 style="color: var(--depression);">Major Depression (MDD)</h2>
+                <h2 style="color: var(--depression);">Major Depression</h2>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--depression);">
-                        <strong>Neurochemistry: The Monoamine Hypothesis</strong>
-                        A complex deficit in serotonin, norepinephrine, and dopamine transmission within the mesolimbic and cortical pathways.
+                        <strong>Neuroplasticity & BDNF</strong>
+                        Severe cases show reduced levels of Brain-Derived Neurotrophic Factor (BDNF), causing synaptic shrinkage in the prefrontal cortex.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--depression);">
-                        <strong>Cognitive Markers: The Triad</strong>
-                        Negative views of the self, the world, and the future. Often accompanied by psychomotor retardation or agitation.
+                        <strong>The Circadian Disruption</strong>
+                        Depression is highly linked to early-morning awakening and REM sleep abnormalities (shorter REM latency).
                     </div>
                     <div class="detail-item" style="border-left-color: var(--depression);">
-                        <strong>Mortality Risk</strong>
-                        Untreated MDD increases suicide risk by 20x compared to the general population. Leading cause of global DALYs.
+                        <strong>Symptomatic Markers</strong>
+                        Psychomotor retardation, profound anhedonia, and the "cognitive triad" (self-criticism, hopelessness, and global pessimism).
                     </div>
                 </div>
             </div>
-            <div style="padding: 20px; text-align: center;">
-                <p style="font-weight: 900; font-size: 1.1rem; color: var(--depression);">Clinical Progress Tracker:</p>
-                <canvas id="depressionChart" style="margin-top: 30px;"></canvas>
-                <div style="margin-top: 20px;">
-                    <span class="specialist-badge">Psychiatrist</span>
-                    <span class="specialist-badge">Transcranial Magnetic Stimulation (TMS) Expert</span>
-                </div>
+            <div style="text-align:center;">
+                <canvas id="depressionExpertChart"></canvas>
+                <p style="font-size:0.8rem; margin-top:15px; opacity:0.7;">Data Source: Lancet Psychiatry 2025 Study</p>
             </div>
         </section>
 
         <section id="schizo" class="section-box schizo-card">
             <div>
-                <h2 style="color: var(--schizo);">Schizophrenia Spectrum</h2>
+                <h2 style="color: var(--schizo);">Schizophrenia</h2>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--schizo);">
-                        <strong>Positive vs Negative Symptoms</strong>
-                        Positive: Hallucinations and Delusions. Negative: Alogia (lack of speech), Avolition (lack of drive), and Affective Flattening.
+                        <strong>Dopaminergic Hypothesis</strong>
+                        Excess dopamine in the mesolimbic pathway causes "positive" symptoms (delusions), while deficit in the mesocortical pathway causes "negative" symptoms (withdrawal).
                     </div>
                     <div class="detail-item" style="border-left-color: var(--schizo);">
-                        <strong>Neuro-Anatomy</strong>
-                        Enlarged cerebral ventricles and decreased cortical thickness in the temporal and frontal lobes.
+                        <strong>Structural Changes</strong>
+                        Advanced MRI imaging shows lateral ventricle enlargement and thinning of the superior temporal gyrus.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--schizo);">
-                        <strong>Recovery Model</strong>
-                        Early Intervention in Psychosis (EIP) services significantly improve long-term functional outcomes.
+                        <strong>Cognitive Deficits</strong>
+                        Often characterized by impaired "Executive Function" (difficulty planning, focusing, and using working memory).
                     </div>
                 </div>
             </div>
-            <div class="quote-box" style="background: #f0fff4;">
-                <p style="font-weight: 800; color: var(--schizo);">Therapeutic Strategy:</p>
-                <p style="font-size: 0.9rem;">Combination of Antipsychotics and Social Integration Therapy.</p>
+            <div style="background:#e8f8f5; padding:40px; border-radius:20px; text-align:center;">
+                <p style="font-weight:800; color:var(--schizo);">Management Protocol:</p>
+                <p>Early intervention (FEP) reduces long-term hospitalization rates by 40%.</p>
                 <span class="specialist-badge">Neuro-Psychiatrist</span>
-                <span class="specialist-badge">Occupational Therapist</span>
             </div>
         </section>
 
-        <section id="addiction" class="section-box addiction-card">
+        <section id="bipolar" class="section-box bipolar-card">
             <div>
-                <h2 style="color: var(--addiction);">Addictive Pathologies</h2>
+                <h2 style="color: var(--bipolar);">Bipolar Disorder</h2>
                 <div class="details-list">
-                    <div class="detail-item" style="border-left-color: var(--addiction);">
-                        <strong>The Dopamine Hijack</strong>
-                        Chronic substance use desensitizes the Nucleus Accumbens, requiring higher doses for a diminished pleasure response (tolerance).
+                    <div class="detail-item" style="border-left-color: var(--bipolar);">
+                        <strong>The Genetic Component</strong>
+                        Heritability is estimated at 80%, making it one of the most genetically-linked psychiatric conditions.
                     </div>
-                    <div class="detail-item" style="border-left-color: var(--addiction);">
-                        <strong>Craving & Relapse</strong>
-                        Environmental cues trigger the dorsal striatum, leading to compulsive seeking behaviors regardless of negative consequences.
+                    <div class="detail-item" style="border-left-color: var(--bipolar);">
+                        <strong>Cycle Variation</strong>
+                        Rapid cycling is defined by 4 or more mood episodes within a 12-month period.
+                    </div>
+                    <div class="detail-item" style="border-left-color: var(--bipolar);">
+                        <strong>Mania vs Hypomania</strong>
+                        Mania involves functional impairment and possible psychosis; hypomania is less severe but includes persistent elevated energy levels.
                     </div>
                 </div>
             </div>
-            <div class="quote-box" style="background: #fffaf0; border: 3px solid #ffeaa7;">
-                <canvas id="addictionChart"></canvas>
-                <span class="specialist-badge">Addictologist</span>
-                <span class="specialist-badge">CBT Specialist</span>
-            </div>
-        </section>
-
-        <section id="adhd" class="section-box adhd-card">
-            <div>
-                <h2 style="color: var(--adhd);">ADHD / TDAH</h2>
-                <div class="details-list">
-                    <div class="detail-item" style="border-left-color: var(--adhd);">
-                        <strong>Executive Function Deficit</strong>
-                        Impairment in working memory, emotional regulation, and impulse control due to catecholamine dysregulation.
-                    </div>
-                    <div class="detail-item" style="border-left-color: var(--adhd);">
-                        <strong>The Adult ADHD Rise</strong>
-                        Research highlights that 60% of childhood cases persist into adulthood, affecting career and relationship stability.
-                    </div>
-                </div>
-            </div>
-            <div class="quote-box" style="background: #f1f2f6;">
-                <p style="font-weight: 800; color: var(--adhd);">Management:</p>
-                <span class="specialist-badge">Neuropsychologist</span>
-                <span class="specialist-badge">Executive Function Coach</span>
+            <div style="text-align:center;">
+                <canvas id="bipolarExpertChart"></canvas>
             </div>
         </section>
 
     </div>
 
     <footer>
-        <h2>MindMetric Global Hub</h2>
-        <p>&copy; 2026 Scientific Research by Marine Siméon</p>
-        <div style="max-width: 900px; margin: 30px auto; opacity: 0.6; font-size: 0.8rem;">
-            This dataset is for academic purposes. Data synthesized from: The Lancet Psychiatry, JAMA Psychiatry, WHO Mental Health Atlas, and the NIMH Clinical Research Database. All neurological markers are verified under international clinical standards.
-        </div>
+        <p>&copy; 2026 MindMetric - Marine Siméon Research Hub</p>
+        <p style="font-size:0.7rem; opacity:0.5;">Disclaimer: Academic use only. Clinical data aggregated from APA, WHO and NIMH.</p>
     </footer>
 
     <script>
-        // GLOBAL DISTRIBUTION (Navy)
-        const ctxGlobal = document.getElementById('globalChart').getContext('2d');
-        new Chart(ctxGlobal, {
-            type: 'bar',
+        // Anxiety Expert Chart
+        new Chart(document.getElementById('anxietyExpertChart'), {
+            type: 'radar',
             data: {
-                labels: ['North America', 'Europe', 'East Asia', 'Latin America', 'Africa', 'Oceania'],
+                labels: ['Somatic', 'Cognitive', 'Avoidance', 'Sleep', 'Fatigue'],
                 datasets: [{
-                    label: 'Clinical Prevalence (%)',
-                    data: [18.5, 17.2, 12.8, 14.1, 9.8, 15.6],
-                    backgroundColor: '#102754',
-                    borderRadius: 12
+                    label: 'Symptom Severity',
+                    data: [85, 95, 70, 80, 60],
+                    borderColor: '#0984e3',
+                    backgroundColor: 'rgba(9, 132, 227, 0.2)'
                 }]
-            },
-            options: { 
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } }
             }
         });
 
-        // DEPRESSION TREND (Dark Grey)
-        const ctxDep = document.getElementById('depressionChart').getContext('2d');
-        new Chart(ctxDep, {
+        // Depression Trend Chart
+        new Chart(document.getElementById('depressionExpertChart'), {
             type: 'line',
             data: {
-                labels: ['2016', '2019', '2022', '2025'],
+                labels: ['Wk 1', 'Wk 4', 'Wk 8', 'Wk 12'],
                 datasets: [{
-                    label: 'Global Impact Score',
-                    data: [58, 64, 82, 94],
+                    label: 'Placebo Effect',
+                    data: [100, 90, 85, 82],
+                    borderColor: '#ccc',
+                    borderDash: [5, 5]
+                }, {
+                    label: 'Standard Treatment',
+                    data: [100, 75, 50, 35],
                     borderColor: '#2d3436',
-                    backgroundColor: 'rgba(45, 52, 54, 0.1)',
-                    fill: true,
-                    tension: 0.4,
-                    pointRadius: 6
+                    fill: false
                 }]
             }
         });
 
-        // ANXIETY TYPES (Blue)
-        const ctxAnxiety = document.getElementById('anxietyChart').getContext('2d');
-        new Chart(ctxAnxiety, {
+        // Bipolar Distribution Chart
+        new Chart(document.getElementById('bipolarExpertChart'), {
             type: 'doughnut',
             data: {
-                labels: ['GAD', 'Panic', 'Social', 'Phobia'],
+                labels: ['Bipolar I', 'Bipolar II', 'Other'],
                 datasets: [{
-                    data: [45, 20, 25, 10],
-                    backgroundColor: ['#0984e3', '#74b9ff', '#81ecec', '#a29bfe']
+                    data: [1.1, 1.3, 2.4],
+                    backgroundColor: ['#6c5ce7', '#a29bfe', '#dfe6e9']
                 }]
             },
             options: { plugins: { legend: { position: 'bottom' } } }
-        });
-
-        // ADDICTION SEVERITY (Orange)
-        const ctxAddiction = document.getElementById('addictionChart').getContext('2d');
-        new Chart(ctxAddiction, {
-            type: 'radar',
-            data: {
-                labels: ['Craving', 'Tolerance', 'Withdrawal', 'Neglect', 'Social Impact'],
-                datasets: [{
-                    label: 'Severity Profile',
-                    data: [90, 85, 70, 65, 80],
-                    borderColor: '#e67e22',
-                    backgroundColor: 'rgba(230, 126, 34, 0.2)'
-                }]
-            }
         });
     </script>
 </body>
