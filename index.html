@@ -14,7 +14,7 @@
             --depression: #2d3436; /* Black */
             --anger: #d63031;      /* Red */
             --bipolar: #6c5ce7;    /* Purple */
-            --navy: #102754;       /* Navy Blue for Chart */
+            --navy: #102754;
         }
         
         html { scroll-behavior: smooth; }
@@ -37,8 +37,8 @@
         }
 
         .section-box h2 { font-size: 2.8rem; margin-top: 0; }
-        .detail-item { background: #f1f2f6; padding: 15px; border-radius: 12px; margin-bottom: 10px; border-left: 4px solid #ddd; }
-        .detail-item strong { display: block; color: var(--text); }
+        .detail-item { background: #f1f2f6; padding: 15px; border-radius: 12px; margin-bottom: 15px; border-left: 4px solid #ddd; }
+        .detail-item strong { display: block; color: var(--text); font-size: 1.1rem; margin-bottom: 5px; }
 
         .anxiety-card { border-top: 10px solid var(--anxiety); }
         .depression-card { border-top: 10px solid var(--depression); }
@@ -166,7 +166,7 @@
     </footer>
 
     <script>
-        // Graphique Global : Colonnes Marine unies
+        // Graphique Global : Navy Blue Unifié
         const ctxGlobal = document.getElementById('globalChart').getContext('2d');
         new Chart(ctxGlobal, {
             type: 'bar',
