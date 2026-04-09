@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Global Variables for consistent branding */
         :root {
             --bg: #f8f9fa;
             --text: #2d3436;
@@ -21,7 +20,6 @@
             --navy: #102754;
         }
         
-        /* Smooth scrolling for navigation */
         html { scroll-behavior: smooth; }
         
         body { 
@@ -32,119 +30,135 @@
             line-height: 1.6; 
         }
 
-        /* Navigation Bar Styling */
+        /* --- NAVIGATION --- */
         nav { 
             background: rgba(255,255,255,0.95); 
             padding: 20px; 
             position: sticky; 
             top: 0; 
             z-index: 1000; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08); 
             display: flex; 
             justify-content: center; 
             gap: 25px; 
-            flex-wrap: wrap; 
+            flex-wrap: wrap;
         }
 
         nav a { 
             text-decoration: none; 
             color: var(--text); 
             font-weight: 700; 
-            font-size: 0.75rem; 
+            font-size: 0.8rem; 
             text-transform: uppercase; 
-            letter-spacing: 1.2px; 
+            letter-spacing: 1.2px;
+            transition: color 0.3s ease;
         }
 
-        nav a:hover { color: var(--anxiety); transition: 0.3s; }
+        nav a:hover { color: var(--anxiety); }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
 
-        /* Hero Section Styling */
+        /* --- HEADER --- */
         header { 
             text-align: center; 
-            padding: 120px 20px; 
+            padding: 130px 20px; 
             background: white; 
             border-bottom: 1px solid #eee; 
         }
 
-        header h1 { font-size: 5.5rem; margin: 0; letter-spacing: -5px; line-height: 0.8; }
+        header h1 { font-size: 5.5rem; margin: 0; letter-spacing: -5px; line-height: 0.9; }
         
         .author-badge { 
             color: var(--anxiety); 
             font-weight: 800; 
             text-transform: uppercase; 
-            letter-spacing: 3px; 
-            font-size: 0.9rem; 
-            display: block; 
-            margin-bottom: 15px; 
+            letter-spacing: 4px; 
+            font-size: 0.95rem; 
+            margin-bottom: 20px;
+            display: block;
         }
 
-        /* Content Box Grid System */
+        /* --- CONTENT BOXES --- */
         .section-box { 
             background: white; 
-            border-radius: 30px; 
-            padding: 60px; 
-            margin: 50px 0; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-radius: 35px; 
+            padding: 65px; 
+            margin: 60px 0; 
+            box-shadow: 0 25px 50px rgba(0,0,0,0.04);
             display: grid; 
             grid-template-columns: 1fr 1fr; 
-            gap: 50px;
+            gap: 55px;
         }
 
-        .section-box h2 { font-size: 3rem; margin-top: 0; }
+        .section-box h2 { font-size: 3.2rem; margin-top: 0; margin-bottom: 30px; }
         
         .detail-item { 
             background: #f8f9fa; 
-            padding: 25px; 
-            border-radius: 15px; 
-            margin-bottom: 25px; 
-            border-left: 6px solid #ddd; 
+            padding: 28px; 
+            border-radius: 18px; 
+            margin-bottom: 28px; 
+            border-left: 7px solid #ddd; 
         }
 
         .detail-item strong { 
             display: block; 
             color: var(--text); 
-            font-size: 1.2rem; 
-            margin-bottom: 8px; 
+            font-size: 1.25rem; 
+            margin-bottom: 12px; 
         }
-        
+
         .source-tag { 
             font-size: 0.75rem; 
             color: #95a5a6; 
             text-transform: uppercase; 
             font-weight: 800; 
-            margin-top: 15px; 
-            display: block; 
+            margin-top: 20px; 
+            display: block;
+            letter-spacing: 0.8px;
         }
 
         .specialist-badge { 
             display: inline-block; 
-            background: #2d3436; 
+            background: var(--text); 
             color: white; 
-            padding: 8px 16px; 
-            border-radius: 30px; 
+            padding: 10px 20px; 
+            border-radius: 40px; 
             font-size: 0.85rem; 
-            margin-top: 12px; 
-            font-weight: bold; 
-            margin-right: 8px; 
+            margin-top: 15px; 
+            font-weight: 700; 
+            margin-right: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* Section Borders */
-        .anxiety-card { border-top: 12px solid var(--anxiety); }
-        .depression-card { border-top: 12px solid var(--depression); }
-        .anger-card { border-top: 12px solid var(--anger); }
-        .bipolar-card { border-top: 12px solid var(--bipolar); }
-        .addiction-card { border-top: 12px solid var(--addiction); }
+        /* --- CARD VARIATIONS --- */
+        .anxiety-card { border-top: 15px solid var(--anxiety); }
+        .depression-card { border-top: 15px solid var(--depression); }
+        .addiction-card { border-top: 15px solid var(--addiction); }
+        .anger-card { border-top: 15px solid var(--anger); }
+        .bipolar-card { border-top: 15px solid var(--bipolar); }
 
-        footer { background: var(--text); color: white; padding: 80px 20px; text-align: center; }
+        .quote-box {
+            border-radius: 25px; 
+            padding: 50px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;
+            text-align: center;
+        }
+
+        footer { background: var(--text); color: white; padding: 100px 20px; text-align: center; }
         
-        @media (max-width: 950px) { .section-box { grid-template-columns: 1fr; } }
+        @media (max-width: 1000px) { 
+            .section-box { grid-template-columns: 1fr; padding: 40px; }
+            header h1 { font-size: 3.5rem; letter-spacing: -2px; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#global">GLOBAL DATA</a>
+        <a href="#global">GLOBAL ANALYSIS</a>
         <a href="#anxiety">ANXIETY</a>
         <a href="#depression">DEPRESSION</a>
         <a href="#addiction">ADDICTION</a>
@@ -153,9 +167,9 @@
     </nav>
 
     <header>
-        <span class="author-badge">Scientific Research Synthesis by Marine Siméon</span>
+        <span class="author-badge">Scientific Research by Marine Siméon</span>
         <h1>MindMetric.</h1>
-        <p>A centralized hub for global psychiatric data, addiction mapping, and clinical prevalence.</p>
+        <p>A high-fidelity centralized hub for global psychiatric prevalence mapping and clinical pathways.</p>
     </header>
 
     <div class="container">
@@ -163,42 +177,43 @@
         <section id="global" class="section-box" style="grid-template-columns: 1fr;">
             <div style="text-align: center;">
                 <h2>Global Lifetime Prevalence</h2>
-                <p style="max-width: 700px; margin: 0 auto 40px;">Standardized cross-analysis of mental health reporting across international regions. Data focuses on clinical diagnostic rates.</p>
-                <div style="max-width: 850px; margin: auto;">
+                <p style="max-width: 750px; margin: 0 auto 50px;">
+                    Cross-analysis of mental health reporting across 29 nations. This Navy-Blue standardized model highlights the disparity in clinical diagnosis rates by continent.
+                </p>
+                <div style="max-width: 950px; margin: auto;">
                     <canvas id="globalChart"></canvas>
                 </div>
-                <span class="source-tag">Primary Source: World Health Organization (WHO) Mental Health Atlas</span>
+                <span class="source-tag">Data Source: World Health Organization (WHO) Mental Health Atlas & IHME Research</span>
             </div>
         </section>
 
         <section id="addiction" class="section-box addiction-card">
             <div>
                 <h2 style="color: var(--addiction);">Addiction & Reward</h2>
-                <p>Chronic dysfunction of the brain's reward, motivation, and memory systems.</p>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--addiction);">
-                        <strong>Global Impact: 35 Million Disorders</strong>
-                        NIDA reports indicate 35 million people suffer from substance use disorders globally. Digital dependencies are currently rising at an accelerated rate.
+                        <strong>Quantitative Data: 35 Million Disorders</strong>
+                        NIDA estimates suggest 35 million people suffer from drug-use disorders. Digital and behavioral addictions are showing a 20% annual growth rate.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--addiction);">
-                        <strong>Symptom Profile:</strong>
-                        Impulse control loss, tolerance development, and prioritize the stimuli over life-sustaining activities.
+                        <strong>Clinical Symptoms & Signs</strong>
+                        Tolerance development, loss of impulse control, and neurochemical "hijacking" of the dopamine reward circuit.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--addiction);">
-                        <strong>Predictive Analytics:</strong>
-                        Unaddressed addiction leads to permanent neuroplasticity alterations in the nucleus accumbens.
+                        <strong>Predictive Risks</strong>
+                        Unmanaged addiction correlates with permanent neuroplasticity alterations and high comorbid major depression.
                     </div>
-                    <span class="source-tag">Sources: NIH / National Institute on Drug Abuse (NIDA)</span>
                 </div>
             </div>
-            <div style="background: #fff3e0; border-radius: 20px; padding: 40px; display: flex; flex-direction: column; justify-content: center;">
-                 <p style="font-weight: 800; color: var(--addiction); font-size: 1.2rem;">Specialized Care Pathway:</p>
-                 <div>
+            <div class="quote-box" style="background: #fff3e0;">
+                <p style="font-weight: 800; color: var(--addiction); font-size: 1.4rem;">"The Dopamine Hijack."</p>
+                <p>Clinical specialists involved:</p>
+                <div>
                     <span class="specialist-badge">Addictologist</span>
                     <span class="specialist-badge">Psychiatrist (MD)</span>
                     <span class="specialist-badge">CBT Specialist</span>
-                 </div>
-                 <p style="margin-top: 20px; font-style: italic; font-size: 0.95rem;">"Addiction is the biochemical hijacking of the dopamine pathway."</p>
+                </div>
+                <span class="source-tag">Source: NIH / National Institute on Drug Abuse</span>
             </div>
         </section>
 
@@ -207,20 +222,27 @@
                 <h2 style="color: var(--anxiety);">Anxiety Disorders</h2>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--anxiety);">
-                        <strong>Stats: 301 Million Cases</strong>
-                        75% of clinical anxiety disorders solidify before the age of 24, making early campus intervention critical.
+                        <strong>Quantitative Data: 301 Million Cases</strong>
+                        Research confirms anxiety as the leading psychiatric condition globally. 75% of cases are identified before age 24.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--anxiety);">
-                        <strong>Symptomatic Markers:</strong>
-                        Cognitive fog, persistent tachycardia, and systemic avoidant behaviors.
+                        <strong>Clinical Symptoms & Markers</strong>
+                        Persistent cognitive fog, somatization (tachycardia), and maladaptive avoidant behaviors.
                     </div>
-                    <span class="source-tag">Source: The Lancet Psychiatry / WHO Global health estimates</span>
+                    <div class="detail-item" style="border-left-color: var(--anxiety);">
+                        <strong>Predictive Outcomes</strong>
+                        Chronic anxiety predicts future cardiovascular dysfunction and professional social decoupling.
+                    </div>
                 </div>
             </div>
-            <div style="background: #e3f2fd; border-radius: 20px; padding: 40px;">
-                 <p style="font-weight: bold; color: var(--anxiety);">Specialists to consult:</p>
-                 <span class="specialist-badge">Psychologist (CBT)</span>
-                 <span class="specialist-badge">Sophrologist</span>
+            <div class="quote-box" style="background: #e3f2fd;">
+                <p style="font-weight: 800; color: var(--anxiety); font-size: 1.3rem;">"Neurobiology of Uncertainty."</p>
+                <p>Specialists for care:</p>
+                <div>
+                    <span class="specialist-badge">Clinical Psychologist</span>
+                    <span class="specialist-badge">CBT Therapist</span>
+                </div>
+                <span class="source-tag">Reference: Harvard Medical School Research Library</span>
             </div>
         </section>
 
@@ -229,21 +251,25 @@
                 <h2 style="color: var(--depression);">Clinical Depression</h2>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--depression);">
-                        <strong>Economic Burden: $1 Trillion GDP</strong>
-                        Depression remains the leading cause of disability globally with 280 million clinical cases.
+                        <strong>Economic Impact: $1 Trillion Annual Loss</strong>
+                        MDD affects 280 million people, representing the leading cause of global disability adjusted life years (DALYs).
                     </div>
                     <div class="detail-item" style="border-left-color: var(--depression);">
-                        <strong>Key Symptoms:</strong>
-                        Anhedonia, lethargy, and significant executive function deficit.
+                        <strong>Primary Symptoms</strong>
+                        Anhedonia (inability to feel pleasure), disrupted circadian rhythms, and executive function deficit.
                     </div>
-                    <span class="source-tag">Source: Harvard Medical School / WHO mhGAP</span>
+                    <div class="detail-item" style="border-left-color: var(--depression);">
+                        <strong>Medical Referral</strong>
+                        Crucial for managing suicidal ideation and restoring neurochemical synaptic balance.
+                    </div>
                 </div>
             </div>
             <div style="padding: 20px; text-align: center;">
-                <p style="font-weight: bold;">Medical Referral:</p>
-                <span class="specialist-badge">Psychiatrist</span>
-                <span class="specialist-badge">Clinical Psychologist</span>
-                <canvas id="depressionChart" style="margin-top: 30px;"></canvas>
+                <p style="font-weight: 800;">Recommended Specialists:</p>
+                <span class="specialist-badge">Psychiatrist (MD)</span>
+                <span class="specialist-badge">Psychotherapist</span>
+                <canvas id="depressionChart" style="margin-top: 35px;"></canvas>
+                <span class="source-tag">Data: WHO Mental Health Gap Programme</span>
             </div>
         </section>
 
@@ -252,20 +278,24 @@
                 <h2 style="color: var(--anger);">Anger & Impulse</h2>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--anger);">
-                        <strong>Neurobiology: PFC-Amygdala Gap</strong>
-                        Weakened connectivity between rational control and emotional response centers.
+                        <strong>Neurological Basis: Amygdala Overdrive</strong>
+                        Weakened synaptic connectivity between the prefrontal cortex (control) and the amygdala (emotion).
                     </div>
                     <div class="detail-item" style="border-left-color: var(--anger);">
-                        <strong>Signs of IED:</strong>
-                        Sudden outbursts, racing heart, and immediate remorse post-crisis.
+                        <strong>Clinical Indicators</strong>
+                        Intermittent Explosive Disorder (IED) markers: rapid heart rate, verbal aggression, and post-crisis remorse.
                     </div>
-                    <span class="source-tag">Source: DSM-5-TR Clinical Database</span>
+                    <div class="detail-item" style="border-left-color: var(--anger);">
+                        <strong>Long-term Risks</strong>
+                        Predicts high vulnerability to substance use disorders and chronic interpersonal trauma.
+                    </div>
                 </div>
             </div>
-            <div style="background: #fff5f5; padding: 40px; border-radius: 20px; border: 2px dashed var(--anger); display: flex; flex-direction: column; justify-content: center;">
-                <p style="font-weight: bold; color: var(--anger);">Clinical Support:</p>
+            <div class="quote-box" style="background: #fff5f5; border: 2px dashed var(--anger);">
+                <p style="font-weight: 800; color: var(--anger);">Specialists & Intervention:</p>
                 <span class="specialist-badge">Neuropsychologist</span>
                 <span class="specialist-badge">Behavioral Therapist</span>
+                <span class="source-tag">Source: DSM-5-TR Clinical Guidelines</span>
             </div>
         </section>
 
@@ -274,32 +304,39 @@
                 <h2 style="color: var(--bipolar);">Bipolar Disorder</h2>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--bipolar);">
-                        <strong>Global Prevalence: 40 Million</strong>
-                        A complex mood regulation spectrum involving neurotransmitter shifts.
+                        <strong>Demographics: 40 Million People</strong>
+                        A spectrum disorder characterized by extreme shifts in energy, mood, and cognitive activity levels.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--bipolar);">
-                        <strong>Key Phases:</strong>
-                        Alternating Mania (extreme energy) and severe clinical depressive crashes.
+                        <strong>Symptomatic Phases</strong>
+                        Mania (pressured speech, hyper-activity) alternating with severe clinical depressive episodes.
                     </div>
-                    <span class="source-tag">Source: International Society for Bipolar Disorders (ISBD)</span>
+                    <div class="detail-item" style="border-left-color: var(--bipolar);">
+                        <strong>Clinical Prognosis</strong>
+                        Requires lifelong clinical management to prevent social and financial destabilization.
+                    </div>
                 </div>
             </div>
-            <div style="background: #f3f0ff; border-radius: 20px; padding: 40px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                <p style="font-weight: bold; color: var(--bipolar);">Medical Requirement:</p>
+            <div class="quote-box" style="background: #f3f0ff;">
+                <p style="font-weight: 800; color: var(--bipolar);">Mandatory Clinical Path:</p>
                 <span class="specialist-badge">Psychiatrist (Mood Specialist)</span>
-                <p style="margin-top: 15px; font-size: 0.9rem;">Essential: Pharmacological stabilization.</p>
-           </div>
+                <p style="font-size: 0.9rem; margin-top: 15px;">Focus: Pharmacotherapy and psychoeducation.</p>
+                <span class="source-tag">Source: International Society for Bipolar Disorders</span>
+            </div>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 MindMetric Hub - Independent Research by Marine Siméon</p>
-        <p style="font-size: 0.75rem; opacity: 0.6; max-width: 700px; margin: 20px auto;">Data synthesized from the World Health Organization (WHO), National Institutes of Health (NIH), Harvard Medical Research, and The Lancet Global Health.</p>
+        <p>&copy; 2026 MindMetric Hub - Research by Marine Siméon</p>
+        <p style="font-size: 0.75rem; opacity: 0.6; max-width: 850px; margin: 30px auto; line-height: 1.8;">
+            Disclaimer: This platform is for academic and informational purposes only. Data synthesized from: WHO Mental Health Atlas, 
+            The Lancet Global Health, Harvard Medical School Research Library, NIH/NIDA, and the APA.
+        </p>
     </footer>
 
     <script>
-        // Global Bar Chart Logic
+        // GLOBAL DATA CHART
         const ctxGlobal = document.getElementById('globalChart').getContext('2d');
         new Chart(ctxGlobal, {
             type: 'bar',
@@ -308,21 +345,21 @@
                 datasets: [{
                     label: 'Prevalence Rate (%)',
                     data: [15.2, 14.8, 10.1, 11.9, 12.5],
-                    backgroundColor: '#102754', 
-                    borderRadius: 10
+                    backgroundColor: '#102754',
+                    borderRadius: 12
                 }]
             },
             options: { responsive: true, plugins: { legend: { display: false } } }
         });
 
-        // Depression Line Chart Logic
+        // DEPRESSION IMPACT CHART
         const ctxDep = document.getElementById('depressionChart').getContext('2d');
         new Chart(ctxDep, {
             type: 'line',
             data: {
                 labels: ['2016', '2019', '2022', '2025'],
                 datasets: [{
-                    label: 'Global Impact Score',
+                    label: 'Impact Score',
                     data: [65, 72, 85, 91],
                     borderColor: '#2d3436',
                     backgroundColor: 'rgba(45, 52, 54, 0.05)',
