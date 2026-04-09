@@ -10,10 +10,10 @@
         :root {
             --bg: #f8f9fa;
             --text: #2d3436;
-            --anxiety: #0984e3;    /* Blue */
-            --depression: #2d3436; /* Black */
-            --anger: #d63031;      /* Red */
-            --bipolar: #6c5ce7;    /* Purple */
+            --anxiety: #0984e3;
+            --depression: #2d3436;
+            --anger: #d63031;
+            --bipolar: #6c5ce7;
             --navy: #102754;
         }
         
@@ -37,8 +37,13 @@
         }
 
         .section-box h2 { font-size: 2.8rem; margin-top: 0; }
-        .detail-item { background: #f1f2f6; padding: 15px; border-radius: 12px; margin-bottom: 15px; border-left: 4px solid #ddd; }
+        .detail-item { background: #f1f2f6; padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #ddd; }
         .detail-item strong { display: block; color: var(--text); font-size: 1.1rem; margin-bottom: 5px; }
+        .source-tag { font-size: 0.75rem; color: #636e72; text-transform: uppercase; font-weight: bold; margin-top: 10px; display: block; }
+
+        /* Nouveaux styles pour les symptômes et spécialistes */
+        .symptoms-list { background: #fff; padding: 15px; border-radius: 10px; margin-top: 10px; border: 1px solid #eee; font-size: 0.9rem; }
+        .specialist-badge { display: inline-block; background: #2d3436; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; margin-top: 10px; font-weight: bold; }
 
         .anxiety-card { border-top: 10px solid var(--anxiety); }
         .depression-card { border-top: 10px solid var(--depression); }
@@ -62,7 +67,7 @@
     <header>
         <span class="author-badge">Independent Research Synthesis by Marine Siméon</span>
         <h1>MindMetric.</h1>
-        <p>A centralized hub for global psychiatric data and clinical prevalence (WHO & Harvard Sources).</p>
+        <p>A centralized hub for global psychiatric data and clinical prevalence.</p>
     </header>
 
     <div class="container">
@@ -70,7 +75,7 @@
         <section id="global" class="section-box" style="grid-template-columns: 1fr;">
             <div style="text-align: center;">
                 <h2>Global Lifetime Prevalence</h2>
-                <p>Analysis of data from 29 countries. This chart compiles WHO reports to demonstrate the real statistical impact by region.</p>
+                <p>Analysis of data from 29 countries compiled to demonstrate statistical impact by region.</p>
                 <div style="max-width: 800px; margin: auto;">
                     <canvas id="globalChart"></canvas>
                 </div>
@@ -79,94 +84,114 @@
 
         <section id="anxiety" class="section-box anxiety-card">
             <div>
-                <h2 style="color: var(--anxiety);">Anxiety</h2>
-                <p>The most common mental health disorder worldwide according to World Health Organization data.</p>
+                <h2 style="color: var(--anxiety);">Anxiety Disorders</h2>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--anxiety);">
-                        <strong>Massive Impact: 301 Million Cases</strong>
-                        Affecting a growing portion of the youth population, particularly within academic environments.
+                        <strong>Stats: 301 Million Cases</strong>
+                        75% of cases solidify before age 24.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--anxiety);">
-                        <strong>Critical Onset Age: Before 24</strong>
-                        Studies indicate that the majority of anxiety disorders solidify during the transition into adulthood.
+                        <strong>Common Symptoms:</strong>
+                        Palpitations, persistent "brain fog", avoidant behavior, and sleep disturbances (insomnia).
+                    </div>
+                    <div class="detail-item" style="border-left-color: var(--anxiety);">
+                        <strong>Predictive Risk:</strong>
+                        Can predict chronic cardiovascular issues and social isolation if left untreated.
                     </div>
                 </div>
             </div>
-            <div style="background: #e3f2fd; border-radius: 20px; padding: 30px; display: flex; align-items: center; justify-content: center;">
-                 <p style="font-weight: bold; color: var(--anxiety); text-align: center;">"Anxiety is not just a passing fear; it is a systemic brain response to persistent uncertainty."</p>
+            <div style="background: #e3f2fd; border-radius: 20px; padding: 30px;">
+                 <p style="font-weight: bold; color: var(--anxiety);">Specialist to see:</p>
+                 <span class="specialist-badge">Psychologist (CBT Specialist)</span>
+                 <span class="specialist-badge">Sophrologist</span>
+                 <p style="margin-top: 15px; font-size: 0.9rem; font-style: italic;">"Anxiety is a systemic response to uncertainty."</p>
             </div>
         </section>
 
         <section id="depression" class="section-box depression-card">
             <div>
                 <h2 style="color: var(--depression);">Clinical Depression</h2>
-                <p>Deep clinical analysis based on Harvard Medical School research findings.</p>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--depression);">
-                        <strong>WHO Statistics: 280 Million</strong>
-                        Depression is the leading cause of disability worldwide, impacting global GDP by nearly $1 trillion annually.
+                        <strong>Impact: $1 Trillion GDP Loss</strong>
+                        Leading cause of disability worldwide (280 million people).
                     </div>
                     <div class="detail-item" style="border-left-color: var(--depression);">
-                        <strong>Risk Factor: 1 in 2 People</strong>
-                        Comprehensive data synthesis suggests that the risk of developing a mood disorder during a lifetime is exceptionally high.
+                        <strong>Common Symptoms:</strong>
+                        Anhedonia (loss of pleasure), extreme fatigue, changes in appetite, and suicidal ideation.
+                    </div>
+                    <div class="detail-item" style="border-left-color: var(--depression);">
+                        <strong>Predictive Risk:</strong>
+                        Long-term cognitive decline and increased risk of comorbid physical illnesses.
                     </div>
                 </div>
             </div>
-            <div style="padding: 20px;">
-                <canvas id="depressionChart"></canvas>
+            <div style="padding: 20px; text-align: center;">
+                <p style="font-weight: bold;">Specialist to see:</p>
+                <span class="specialist-badge">Psychiatrist (MD)</span>
+                <span class="specialist-badge">Clinical Psychologist</span>
+                <canvas id="depressionChart" style="margin-top: 20px;"></canvas>
             </div>
         </section>
 
         <section id="anger" class="section-box anger-card">
             <div>
                 <h2 style="color: var(--anger);">Anger & Impulse</h2>
-                <p>Focusing on impulse control disorders and the management of chronic irritability.</p>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--anger);">
                         <strong>Neurobiology:</strong>
-                        Direct correlation with prefrontal cortex regulation and amygdala responses.
+                        Amygdala-Cortex disconnection leading to Intermittent Explosive Disorder (IED).
                     </div>
                     <div class="detail-item" style="border-left-color: var(--anger);">
-                        <strong>Manifestation:</strong>
-                        Intermittent Explosive Disorder often affects young adults, impacting social and professional integration.
+                        <strong>Common Symptoms:</strong>
+                        Sudden verbal/physical outbursts, "racing heart" during conflict, and immediate regret post-episode.
+                    </div>
+                    <div class="detail-item" style="border-left-color: var(--anger);">
+                        <strong>Predictive Risk:</strong>
+                        Predicts high risk of substance abuse and professional instability.
                     </div>
                 </div>
             </div>
-            <div style="background: #fff5f5; padding: 20px; border-radius: 15px; border: 2px dashed var(--anger); display: flex; flex-direction: column; justify-content: center;">
-                <h4 style="color: var(--anger); margin-top: 0;">Data Alert:</h4>
-                <p>Impulsivity is frequently the primary signal for more complex, undiagnosed psychological conditions.</p>
+            <div style="background: #fff5f5; padding: 30px; border-radius: 15px; border: 2px dashed var(--anger);">
+                <p style="font-weight: bold; color: var(--anger);">Specialist to see:</p>
+                <span class="specialist-badge">Neuropsychologist</span>
+                <span class="specialist-badge">Behaviorist</span>
             </div>
         </section>
 
         <section id="bipolar" class="section-box bipolar-card">
             <div>
                 <h2 style="color: var(--bipolar);">Bipolar Disorder</h2>
-                <p>Understanding the cyclical nature of mood regulation and neurotransmitter patterns.</p>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--bipolar);">
-                        <strong>Global Prevalence: 40 Million</strong>
-                        A complex disorder characterized by alternating manic and depressive episodes.
+                        <strong>Scale: 40 Million Cases</strong>
+                        Energy and mood regulation spectrum.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--bipolar);">
-                        <strong>Diagnostic Research:</strong>
-                        Requires long-term data tracking for accurate clinical intervention.
+                        <strong>Common Symptoms:</strong>
+                        Alternating phases of Mania (hyperactivity, no sleep) and Depression (total withdrawal).
+                    </div>
+                    <div class="detail-item" style="border-left-color: var(--bipolar);">
+                        <strong>Predictive Risk:</strong>
+                        High vulnerability to financial risk-taking and severe mood destabilization.
                     </div>
                 </div>
             </div>
-            <div style="background: #f3f0ff; border-radius: 20px; padding: 30px; display: flex; align-items: center; justify-content: center;">
-                <p style="font-weight: bold; color: var(--bipolar); text-align: center;">"Bipolarity is a spectrum of energy regulation, not just mood swings."</p>
+            <div style="background: #f3f0ff; border-radius: 20px; padding: 30px;">
+                <p style="font-weight: bold; color: var(--bipolar);">Specialist to see:</p>
+                <span class="specialist-badge">Psychiatrist (Mood Specialist)</span>
+                <p style="margin-top: 15px; font-size: 0.9rem;">Essential: Mood stabilizers and long-term medical follow-up.</p>
            </div>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 MindMetric Hub - Independent Research Synthesis by Marine Siméon</p>
-        <p style="font-size: 0.7rem; opacity: 0.6;">Data sourced from WHO Global Health Estimates & Harvard Medical Research.</p>
+        <p>&copy; 2026 MindMetric Hub - Research Synthesis by Marine Siméon</p>
+        <p style="font-size: 0.7rem; opacity: 0.6;">Disclaimer: This data is for informational purposes. If you are in distress, please contact professional emergency services.</p>
     </footer>
 
     <script>
-        // Graphique Global : Navy Blue Unifié
         const ctxGlobal = document.getElementById('globalChart').getContext('2d');
         new Chart(ctxGlobal, {
             type: 'bar',
@@ -176,30 +201,25 @@
                     label: 'Prevalence %',
                     data: [15.2, 14.8, 10.1, 11.9, 12.5],
                     backgroundColor: '#102754', 
-                    borderColor: '#0a1a38',
-                    borderWidth: 1,
                     borderRadius: 5
                 }]
             },
             options: { responsive: true, plugins: { legend: { display: false } } }
         });
 
-        // Graphique Dépression (Ligne)
         const ctxDep = document.getElementById('depressionChart').getContext('2d');
         new Chart(ctxDep, {
             type: 'line',
             data: {
                 labels: ['2016', '2019', '2022', '2025'],
                 datasets: [{
-                    label: 'Impact Score',
+                    label: 'Global Score',
                     data: [65, 72, 85, 91],
                     borderColor: '#2d3436',
-                    backgroundColor: 'rgba(45, 52, 54, 0.05)',
-                    fill: true,
+                    fill: false,
                     tension: 0.3
                 }]
-            },
-            options: { responsive: true }
+            }
         });
     </script>
 </body>
