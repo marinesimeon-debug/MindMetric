@@ -39,11 +39,10 @@
         .section-box h2 { font-size: 2.8rem; margin-top: 0; }
         .detail-item { background: #f1f2f6; padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #ddd; }
         .detail-item strong { display: block; color: var(--text); font-size: 1.1rem; margin-bottom: 5px; }
-        .source-tag { font-size: 0.75rem; color: #636e72; text-transform: uppercase; font-weight: bold; margin-top: 10px; display: block; }
+        
+        .source-label { font-size: 0.7rem; color: #b2bec3; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-top: 10px; display: block; }
 
-        /* Nouveaux styles pour les symptômes et spécialistes */
-        .symptoms-list { background: #fff; padding: 15px; border-radius: 10px; margin-top: 10px; border: 1px solid #eee; font-size: 0.9rem; }
-        .specialist-badge { display: inline-block; background: #2d3436; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; margin-top: 10px; font-weight: bold; }
+        .specialist-badge { display: inline-block; background: #2d3436; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; margin-top: 10px; font-weight: bold; margin-right: 5px; }
 
         .anxiety-card { border-top: 10px solid var(--anxiety); }
         .depression-card { border-top: 10px solid var(--depression); }
@@ -67,7 +66,7 @@
     <header>
         <span class="author-badge">Independent Research Synthesis by Marine Siméon</span>
         <h1>MindMetric.</h1>
-        <p>A centralized hub for global psychiatric data and clinical prevalence.</p>
+        <p>A high-fidelity centralized hub for global psychiatric data and clinical prevalence.</p>
     </header>
 
     <div class="container">
@@ -75,10 +74,11 @@
         <section id="global" class="section-box" style="grid-template-columns: 1fr;">
             <div style="text-align: center;">
                 <h2>Global Lifetime Prevalence</h2>
-                <p>Analysis of data from 29 countries compiled to demonstrate statistical impact by region.</p>
+                <p>Synthesis of data from 29 countries compiled to demonstrate statistical impact by region.</p>
                 <div style="max-width: 800px; margin: auto;">
                     <canvas id="globalChart"></canvas>
                 </div>
+                <span class="source-label">Source: WHO World Mental Health (WMH) Survey Initiative</span>
             </div>
         </section>
 
@@ -88,23 +88,19 @@
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--anxiety);">
                         <strong>Stats: 301 Million Cases</strong>
-                        75% of cases solidify before age 24.
+                        75% of anxiety disorders solidify before age 24, peaking during academic transitions.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--anxiety);">
-                        <strong>Common Symptoms:</strong>
-                        Palpitations, persistent "brain fog", avoidant behavior, and sleep disturbances (insomnia).
+                        <strong>Symptoms & Risks:</strong>
+                        Palpitations, avoidant behavior, and chronic sleep disturbances. Predicts long-term social isolation.
                     </div>
-                    <div class="detail-item" style="border-left-color: var(--anxiety);">
-                        <strong>Predictive Risk:</strong>
-                        Can predict chronic cardiovascular issues and social isolation if left untreated.
-                    </div>
+                    <span class="source-label">Source: The Lancet Psychiatry / WHO Global Health Estimates</span>
                 </div>
             </div>
             <div style="background: #e3f2fd; border-radius: 20px; padding: 30px;">
-                 <p style="font-weight: bold; color: var(--anxiety);">Specialist to see:</p>
-                 <span class="specialist-badge">Psychologist (CBT Specialist)</span>
+                 <p style="font-weight: bold; color: var(--anxiety);">Specialists:</p>
+                 <span class="specialist-badge">Psychologist (CBT)</span>
                  <span class="specialist-badge">Sophrologist</span>
-                 <p style="margin-top: 15px; font-size: 0.9rem; font-style: italic;">"Anxiety is a systemic response to uncertainty."</p>
             </div>
         </section>
 
@@ -113,21 +109,18 @@
                 <h2 style="color: var(--depression);">Clinical Depression</h2>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--depression);">
-                        <strong>Impact: $1 Trillion GDP Loss</strong>
-                        Leading cause of disability worldwide (280 million people).
+                        <strong>Economic Impact: $1 Trillion GDP Loss</strong>
+                        Leading cause of disability globally with 280 million clinical cases reported.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--depression);">
-                        <strong>Common Symptoms:</strong>
-                        Anhedonia (loss of pleasure), extreme fatigue, changes in appetite, and suicidal ideation.
+                        <strong>Symptoms & Risks:</strong>
+                        Anhedonia, persistent lethargy, and suicidal ideation. Predicts severe cognitive decline if untreated.
                     </div>
-                    <div class="detail-item" style="border-left-color: var(--depression);">
-                        <strong>Predictive Risk:</strong>
-                        Long-term cognitive decline and increased risk of comorbid physical illnesses.
-                    </div>
+                    <span class="source-label">Source: Harvard Medical School / WHO Mental Health Gap Action Programme</span>
                 </div>
             </div>
             <div style="padding: 20px; text-align: center;">
-                <p style="font-weight: bold;">Specialist to see:</p>
+                <p style="font-weight: bold;">Specialists:</p>
                 <span class="specialist-badge">Psychiatrist (MD)</span>
                 <span class="specialist-badge">Clinical Psychologist</span>
                 <canvas id="depressionChart" style="margin-top: 20px;"></canvas>
@@ -139,23 +132,20 @@
                 <h2 style="color: var(--anger);">Anger & Impulse</h2>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--anger);">
-                        <strong>Neurobiology:</strong>
-                        Amygdala-Cortex disconnection leading to Intermittent Explosive Disorder (IED).
+                        <strong>Neurobiology: Amygdala Dysregulation</strong>
+                        MRI data shows connectivity gaps between the prefrontal cortex and the emotional centers.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--anger);">
-                        <strong>Common Symptoms:</strong>
-                        Sudden verbal/physical outbursts, "racing heart" during conflict, and immediate regret post-episode.
+                        <strong>Symptoms & Risks:</strong>
+                        Verbal outbursts and immediate post-episode regret. Predicts high occupational instability.
                     </div>
-                    <div class="detail-item" style="border-left-color: var(--anger);">
-                        <strong>Predictive Risk:</strong>
-                        Predicts high risk of substance abuse and professional instability.
-                    </div>
+                    <span class="source-label">Source: DSM-5-TR / Journal of Clinical Psychiatry</span>
                 </div>
             </div>
             <div style="background: #fff5f5; padding: 30px; border-radius: 15px; border: 2px dashed var(--anger);">
-                <p style="font-weight: bold; color: var(--anger);">Specialist to see:</p>
+                <p style="font-weight: bold; color: var(--anger);">Specialists:</p>
                 <span class="specialist-badge">Neuropsychologist</span>
-                <span class="specialist-badge">Behaviorist</span>
+                <span class="specialist-badge">Behavioral Therapist</span>
             </div>
         </section>
 
@@ -164,23 +154,20 @@
                 <h2 style="color: var(--bipolar);">Bipolar Disorder</h2>
                 <div class="details-list">
                     <div class="detail-item" style="border-left-color: var(--bipolar);">
-                        <strong>Scale: 40 Million Cases</strong>
-                        Energy and mood regulation spectrum.
+                        <strong>Prevalence: 40 Million People</strong>
+                        Severe mood and energy regulation disorder with distinct neurotransmitter patterns.
                     </div>
                     <div class="detail-item" style="border-left-color: var(--bipolar);">
-                        <strong>Common Symptoms:</strong>
-                        Alternating phases of Mania (hyperactivity, no sleep) and Depression (total withdrawal).
+                        <strong>Symptoms & Risks:</strong>
+                        Alternating Mania (extreme energy) and Depression phases. High risk of financial/social destabilization.
                     </div>
-                    <div class="detail-item" style="border-left-color: var(--bipolar);">
-                        <strong>Predictive Risk:</strong>
-                        High vulnerability to financial risk-taking and severe mood destabilization.
-                    </div>
+                    <span class="source-label">Source: International Society for Bipolar Disorders (ISBD)</span>
                 </div>
             </div>
             <div style="background: #f3f0ff; border-radius: 20px; padding: 30px;">
-                <p style="font-weight: bold; color: var(--bipolar);">Specialist to see:</p>
-                <span class="specialist-badge">Psychiatrist (Mood Specialist)</span>
-                <p style="margin-top: 15px; font-size: 0.9rem;">Essential: Mood stabilizers and long-term medical follow-up.</p>
+                <p style="font-weight: bold; color: var(--bipolar);">Specialists:</p>
+                <span class="specialist-badge">Psychiatrist</span>
+                <span class="specialist-badge">Mood Specialist</span>
            </div>
         </section>
 
@@ -188,7 +175,7 @@
 
     <footer>
         <p>&copy; 2026 MindMetric Hub - Research Synthesis by Marine Siméon</p>
-        <p style="font-size: 0.7rem; opacity: 0.6;">Disclaimer: This data is for informational purposes. If you are in distress, please contact professional emergency services.</p>
+        <p style="font-size: 0.7rem; opacity: 0.5; max-width: 800px; margin: auto;">Data Credits: World Health Organization (WHO), Institute for Health Metrics and Evaluation (IHME), Harvard Medical School Research Library, and The Lancet Global Health.</p>
     </footer>
 
     <script>
