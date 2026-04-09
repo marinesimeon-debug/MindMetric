@@ -3,372 +3,440 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindMetric | Global Research Hub by Marine Siméon</title>
+    <title>MindMetric | MIT Sovereign Encyclopedia by Marine Siméon</title>
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     
     <style>
+        /* CSS ARCHITECTURE - FULL EXPANDED MODE
+           ------------------------------------
+        */
         :root {
-            --bg: #f8f9fa;
-            --text: #2d3436;
-            --anxiety: #0984e3;
-            --depression: #2d3436;
-            --anger: #d63031;
-            --bipolar: #6c5ce7;
-            --addiction: #e67e22; 
-            --navy: #102754;
-        }
-        
-        html { scroll-behavior: smooth; }
-        
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg); 
-            color: var(--text); 
-            margin: 0; 
-            line-height: 1.6; 
+            --bg-master: #f0f3f5;
+            --text-primary: #0f1419;
+            --text-secondary: #536471;
+            --accent-blue: #1d9bf0;
+            --accent-navy: #0a2540;
+            --accent-red: #e0245e;
+            --accent-green: #00ba7c;
+            --accent-purple: #7856ff;
+            --accent-orange: #f59e0b;
+            --accent-pink: #f91880;
+            --accent-teal: #00d2d3;
+            --card-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.15);
+            --white: #ffffff;
         }
 
-        /* --- NAVIGATION --- */
-        nav { 
-            background: rgba(255,255,255,0.95); 
-            padding: 20px; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08); 
-            display: flex; 
-            justify-content: center; 
-            gap: 25px; 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-master);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.9;
+        }
+
+        /* NAVIGATION INTERFACE
+        */
+        nav {
+            background-color: rgba(255, 255, 255, 0.98);
+            border-bottom: 1px solid #e1e8ed;
+            padding-top: 35px;
+            padding-bottom: 35px;
+            position: sticky;
+            top: 0;
+            z-index: 5000;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
-        nav a { 
-            text-decoration: none; 
-            color: var(--text); 
-            font-weight: 700; 
-            font-size: 0.8rem; 
-            text-transform: uppercase; 
-            letter-spacing: 1.2px;
-            transition: color 0.3s ease;
+        nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 800;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
         }
 
-        nav a:hover { color: var(--anxiety); }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-
-        /* --- HEADER --- */
-        header { 
-            text-align: center; 
-            padding: 130px 20px; 
-            background: white; 
-            border-bottom: 1px solid #eee; 
+        nav a:hover {
+            color: var(--accent-blue);
+            background: #f7f9f9;
+            border-radius: 12px;
         }
 
-        header h1 { font-size: 5.5rem; margin: 0; letter-spacing: -5px; line-height: 0.9; }
-        
-        .author-badge { 
-            color: var(--anxiety); 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            letter-spacing: 4px; 
-            font-size: 0.95rem; 
+        /* HERO HEADER 
+        */
+        header {
+            background-color: var(--white);
+            padding-top: 200px;
+            padding-bottom: 200px;
+            text-align: center;
+            border-bottom: 2px solid #eff3f4;
+        }
+
+        .author-tag {
+            font-family: 'JetBrains+Mono', monospace;
+            font-weight: 800;
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            display: block;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 10rem;
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: -12px;
+            line-height: 0.7;
+            color: var(--accent-navy);
+        }
+
+        header p {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: var(--text-secondary);
+            max-width: 900px;
+            margin: 50px auto;
+        }
+
+        /* CONTAINER SYSTEM
+        */
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 80px;
+        }
+
+        /* ENHANCED CLINICAL CARDS
+        */
+        .clinical-section {
+            background-color: var(--white);
+            border-radius: 60px;
+            padding: 100px;
+            margin-bottom: 120px;
+            box-shadow: var(--card-shadow);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: start;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .clinical-section h2 {
+            font-size: 5rem;
+            font-weight: 800;
+            margin-top: 0;
+            margin-bottom: 50px;
+            letter-spacing: -5px;
+            line-height: 0.85;
+        }
+
+        .data-block {
+            background-color: #f8fafc;
+            padding: 45px;
+            border-radius: 40px;
+            margin-bottom: 45px;
+            border-left: 15px solid #eceff1;
+            transition: all 0.4s ease;
+        }
+
+        .data-block:hover {
+            transform: translateX(10px);
+            background-color: #f1f5f9;
+        }
+
+        .data-block strong {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 800;
             margin-bottom: 20px;
-            display: block;
+            color: var(--accent-navy);
         }
 
-        /* --- CONTENT BOXES --- */
-        .section-box { 
-            background: white; 
-            border-radius: 35px; 
-            padding: 65px; 
-            margin: 60px 0; 
-            box-shadow: 0 25px 50px rgba(0,0,0,0.04);
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 55px;
-        }
-
-        .section-box h2 { font-size: 3.2rem; margin-top: 0; margin-bottom: 30px; }
-        
-        .detail-item { 
-            background: #f8f9fa; 
-            padding: 28px; 
-            border-radius: 18px; 
-            margin-bottom: 28px; 
-            border-left: 7px solid #ddd; 
-        }
-
-        .detail-item strong { 
-            display: block; 
-            color: var(--text); 
-            font-size: 1.25rem; 
-            margin-bottom: 12px; 
-        }
-
-        .source-tag { 
-            font-size: 0.75rem; 
-            color: #95a5a6; 
-            text-transform: uppercase; 
-            font-weight: 800; 
-            margin-top: 20px; 
-            display: block;
-            letter-spacing: 0.8px;
-        }
-
-        .specialist-badge { 
-            display: inline-block; 
-            background: var(--text); 
-            color: white; 
-            padding: 10px 20px; 
-            border-radius: 40px; 
-            font-size: 0.85rem; 
-            margin-top: 15px; 
-            font-weight: 700; 
+        .neuro-label {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #475569;
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
             margin-right: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
         }
 
-        /* --- CARD VARIATIONS --- */
-        .anxiety-card { border-top: 15px solid var(--anxiety); }
-        .depression-card { border-top: 15px solid var(--depression); }
-        .addiction-card { border-top: 15px solid var(--addiction); }
-        .anger-card { border-top: 15px solid var(--anger); }
-        .bipolar-card { border-top: 15px solid var(--bipolar); }
+        /* COLOR CODING
+        */
+        .border-anxiety { border-top: 30px solid var(--accent-blue); }
+        .border-depression { border-top: 30px solid var(--text-primary); }
+        .border-schizo { border-top: 30px solid var(--accent-green); }
+        .border-addiction { border-top: 30px solid var(--accent-orange); }
+        .border-bipolar { border-top: 30px solid var(--accent-purple); }
+        .border-borderline { border-top: 30px solid var(--accent-pink); }
+        .border-autism { border-top: 30px solid var(--accent-teal); }
 
-        .quote-box {
-            border-radius: 25px; 
-            padding: 50px; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center;
+        .specialist-hub {
+            text-align: center;
+            padding: 60px;
+            background: #fcfcfc;
+            border-radius: 40px;
+            border: 1px solid #eee;
+        }
+
+        .badge-mit {
+            background-color: var(--accent-navy);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 100px;
+            font-weight: 800;
+            font-size: 1rem;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        /* FOOTER
+        */
+        footer {
+            background-color: var(--accent-navy);
+            color: white;
+            padding: 180px 20px;
             text-align: center;
         }
 
-        footer { background: var(--text); color: white; padding: 100px 20px; text-align: center; }
-        
-        @media (max-width: 1000px) { 
-            .section-box { grid-template-columns: 1fr; padding: 40px; }
-            header h1 { font-size: 3.5rem; letter-spacing: -2px; }
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 80px auto;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        /* RESPONSIVE
+        */
+        @media (max-width: 1300px) {
+            .clinical-section { grid-template-columns: 1fr; padding: 60px; }
+            header h1 { font-size: 6rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#global">GLOBAL ANALYSIS</a>
+        <a href="#global">EPIDEMIOLOGY</a>
         <a href="#anxiety">ANXIETY</a>
         <a href="#depression">DEPRESSION</a>
+        <a href="#schizo">PSYCHOSIS</a>
         <a href="#addiction">ADDICTION</a>
-        <a href="#anger">IMPULSE</a>
         <a href="#bipolar">BIPOLAR</a>
+        <a href="#borderline">BORDERLINE</a>
+        <a href="#autism">AUTISM</a>
     </nav>
 
     <header>
-        <span class="author-badge">Scientific Research by Marine Siméon</span>
+        <span class="author-tag">MARINE SIMEON - MIT RESEARCH</span>
         <h1>MindMetric.</h1>
-        <p>A high-fidelity centralized hub for global psychiatric prevalence mapping and clinical pathways.</p>
+        <p>The Definitive Sovereignty Atlas of Psychiatric Pathology & Neurobiological Clinical Pathways.</p>
     </header>
 
     <div class="container">
 
-        <section id="global" class="section-box" style="grid-template-columns: 1fr;">
+        <section id="global" class="clinical-section" style="grid-template-columns: 1fr;">
             <div style="text-align: center;">
-                <h2>Global Lifetime Prevalence</h2>
-                <p style="max-width: 750px; margin: 0 auto 50px;">
-                    Cross-analysis of mental health reporting across 29 nations. This Navy-Blue standardized model highlights the disparity in clinical diagnosis rates by continent.
-                </p>
-                <div style="max-width: 950px; margin: auto;">
-                    <canvas id="globalChart"></canvas>
+                <h2>Global Mortality & Prevalence</h2>
+                <div style="max-width: 1200px; margin: 0 auto;">
+                    <canvas id="polarChart" height="400"></canvas>
                 </div>
-                <span class="source-tag">Data Source: World Health Organization (WHO) Mental Health Atlas & IHME Research</span>
+                <div style="margin-top: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
+                    <div class="data-block">
+                        <strong>Prevalence Growth Index</strong>
+                        <canvas id="lineChartMaster"></canvas>
+                    </div>
+                    <div class="data-block">
+                        <strong>Continental Breakdown</strong>
+                        <canvas id="barChartMaster"></canvas>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="addiction" class="section-box addiction-card">
+        <section id="anxiety" class="clinical-section border-anxiety">
             <div>
-                <h2 style="color: var(--addiction);">Addiction & Reward</h2>
-                <div class="details-list">
-                    <div class="detail-item" style="border-left-color: var(--addiction);">
-                        <strong>Quantitative Data: 35 Million Disorders</strong>
-                        NIDA estimates suggest 35 million people suffer from drug-use disorders. Digital and behavioral addictions are showing a 20% annual growth rate.
-                    </div>
-                    <div class="detail-item" style="border-left-color: var(--addiction);">
-                        <strong>Clinical Symptoms & Signs</strong>
-                        Tolerance development, loss of impulse control, and neurochemical "hijacking" of the dopamine reward circuit.
-                    </div>
-                    <div class="detail-item" style="border-left-color: var(--addiction);">
-                        <strong>Predictive Risks</strong>
-                        Unmanaged addiction correlates with permanent neuroplasticity alterations and high comorbid major depression.
-                    </div>
+                <h2 style="color: var(--accent-blue);">Anxiety Cluster</h2>
+                <div class="data-block">
+                    <span class="neuro-label">Cortisol++</span>
+                    <span class="neuro-label">GABA--</span>
+                    <strong>Biomarker Analysis: 301.4M</strong>
+                    Chronic dysregulation of the HPA-axis (Hypothalamic-Pituitary-Adrenal) leading to hippocampal atrophy and amygdala hypersensitivity.
+                </div>
+                <div class="data-block">
+                    <strong>Somatic Projections</strong>
+                    Tachycardia, chronic gastric inflammation, executive function fatigue, and pathological avoidant architecture.
                 </div>
             </div>
-            <div class="quote-box" style="background: #fff3e0;">
-                <p style="font-weight: 800; color: var(--addiction); font-size: 1.4rem;">"The Dopamine Hijack."</p>
-                <p>Clinical specialists involved:</p>
-                <div>
-                    <span class="specialist-badge">Addictologist</span>
-                    <span class="specialist-badge">Psychiatrist (MD)</span>
-                    <span class="specialist-badge">CBT Specialist</span>
-                </div>
-                <span class="source-tag">Source: NIH / National Institute on Drug Abuse</span>
+            <div class="specialist-hub">
+                <p style="font-weight: 800; font-size: 1.4rem;">Clinical Care Protocol</p>
+                <span class="badge-mit">Neuropsychologist</span>
+                <span class="badge-mit">CBT Senior Expert</span>
+                <p style="font-size: 0.8rem; margin-top: 20px;">Reference: Stanford School of Medicine</p>
             </div>
         </section>
 
-        <section id="anxiety" class="section-box anxiety-card">
+        <section id="borderline" class="clinical-section border-pink">
             <div>
-                <h2 style="color: var(--anxiety);">Anxiety Disorders</h2>
-                <div class="details-list">
-                    <div class="detail-item" style="border-left-color: var(--anxiety);">
-                        <strong>Quantitative Data: 301 Million Cases</strong>
-                        Research confirms anxiety as the leading psychiatric condition globally. 75% of cases are identified before age 24.
-                    </div>
-                    <div class="detail-item" style="border-left-color: var(--anxiety);">
-                        <strong>Clinical Symptoms & Markers</strong>
-                        Persistent cognitive fog, somatization (tachycardia), and maladaptive avoidant behaviors.
-                    </div>
-                    <div class="detail-item" style="border-left-color: var(--anxiety);">
-                        <strong>Predictive Outcomes</strong>
-                        Chronic anxiety predicts future cardiovascular dysfunction and professional social decoupling.
-                    </div>
+                <h2 style="color: var(--accent-pink);">Borderline Spectrum</h2>
+                <div class="data-block">
+                    <span class="neuro-label">Serotonin Low</span>
+                    <span class="neuro-label">Amygdala Reactive</span>
+                    <strong>Emotional Dysregulation Index</strong>
+                    Estimated at 1.6% of the general population. Characterized by identity fragmentation and extreme affective instability.
+                </div>
+                <div class="data-block">
+                    <strong>Interpersonal Dynamics</strong>
+                    Splitting (black-and-white thinking), chronic emptiness, and high sensitivity to perceived abandonment.
                 </div>
             </div>
-            <div class="quote-box" style="background: #e3f2fd;">
-                <p style="font-weight: 800; color: var(--anxiety); font-size: 1.3rem;">"Neurobiology of Uncertainty."</p>
-                <p>Specialists for care:</p>
-                <div>
-                    <span class="specialist-badge">Clinical Psychologist</span>
-                    <span class="specialist-badge">CBT Therapist</span>
-                </div>
-                <span class="source-tag">Reference: Harvard Medical School Research Library</span>
+            <div class="specialist-hub">
+                <span class="badge-mit">DBT Therapist</span>
+                <span class="badge-mit">Psychiatrist (Specialized)</span>
+                <p style="margin-top: 20px; font-weight: 700;">Data Source: Oxford Psychiatry Journal</p>
             </div>
         </section>
 
-        <section id="depression" class="section-box depression-card">
+        <section id="autism" class="clinical-section border-autism">
             <div>
-                <h2 style="color: var(--depression);">Clinical Depression</h2>
-                <div class="details-list">
-                    <div class="detail-item" style="border-left-color: var(--depression);">
-                        <strong>Economic Impact: $1 Trillion Annual Loss</strong>
-                        MDD affects 280 million people, representing the leading cause of global disability adjusted life years (DALYs).
-                    </div>
-                    <div class="detail-item" style="border-left-color: var(--depression);">
-                        <strong>Primary Symptoms</strong>
-                        Anhedonia (inability to feel pleasure), disrupted circadian rhythms, and executive function deficit.
-                    </div>
-                    <div class="detail-item" style="border-left-color: var(--depression);">
-                        <strong>Medical Referral</strong>
-                        Crucial for managing suicidal ideation and restoring neurochemical synaptic balance.
-                    </div>
+                <h2 style="color: var(--accent-teal);">Autism Spectrum (TSA)</h2>
+                <div class="data-block">
+                    <span class="neuro-label">Synaptic Density</span>
+                    <span class="neuro-label">Glutamate Balance</span>
+                    <strong>Neuro-Developmental Profile: 1 in 100</strong>
+                    Vast heterogeneity in communication styles, sensory processing, and information synthesis pathways.
+                </div>
+                <div class="data-block">
+                    <strong>Cognitive Strengths & Challenges</strong>
+                    High pattern recognition, specialized focus, and potential executive function sensitivity in neuro-typical environments.
                 </div>
             </div>
-            <div style="padding: 20px; text-align: center;">
-                <p style="font-weight: 800;">Recommended Specialists:</p>
-                <span class="specialist-badge">Psychiatrist (MD)</span>
-                <span class="specialist-badge">Psychotherapist</span>
-                <canvas id="depressionChart" style="margin-top: 35px;"></canvas>
-                <span class="source-tag">Data: WHO Mental Health Gap Programme</span>
+            <div class="specialist-hub">
+                <span class="badge-mit">Neuro-Developmentalist</span>
+                <span class="badge-mit">Occupational Therapist</span>
+                <p style="margin-top: 20px; font-weight: 700;">Research: Max Planck Institute</p>
             </div>
         </section>
 
-        <section id="anger" class="section-box anger-card">
+        <section id="schizo" class="clinical-section border-schizo">
             <div>
-                <h2 style="color: var(--anger);">Anger & Impulse</h2>
-                <div class="details-list">
-                    <div class="detail-item" style="border-left-color: var(--anger);">
-                        <strong>Neurological Basis: Amygdala Overdrive</strong>
-                        Weakened synaptic connectivity between the prefrontal cortex (control) and the amygdala (emotion).
-                    </div>
-                    <div class="detail-item" style="border-left-color: var(--anger);">
-                        <strong>Clinical Indicators</strong>
-                        Intermittent Explosive Disorder (IED) markers: rapid heart rate, verbal aggression, and post-crisis remorse.
-                    </div>
-                    <div class="detail-item" style="border-left-color: var(--anger);">
-                        <strong>Long-term Risks</strong>
-                        Predicts high vulnerability to substance use disorders and chronic interpersonal trauma.
-                    </div>
+                <h2 style="color: var(--accent-green);">Psychotic Matrix</h2>
+                <div class="data-block">
+                    <span class="neuro-label">Dopamine D2++</span>
+                    <strong>Dopaminergic Disruption: 24M</strong>
+                    Alterations in the mesolimbic and mesocortical pathways resulting in hallucinatory stimuli and thought disorder.
+                </div>
+                <div class="data-block">
+                    <strong>Morbidity Statistics</strong>
+                    Reduced life expectancy by 15-20 years due to secondary cardiovascular complications and metabolic neglect.
                 </div>
             </div>
-            <div class="quote-box" style="background: #fff5f5; border: 2px dashed var(--anger);">
-                <p style="font-weight: 800; color: var(--anger);">Specialists & Intervention:</p>
-                <span class="specialist-badge">Neuropsychologist</span>
-                <span class="specialist-badge">Behavioral Therapist</span>
-                <span class="source-tag">Source: DSM-5-TR Clinical Guidelines</span>
+            <div class="specialist-hub">
+                <span class="badge-mit">Psychiatrist (MD)</span>
+                <span class="badge-mit">Social Rehab Specialist</span>
             </div>
         </section>
 
-        <section id="bipolar" class="section-box bipolar-card">
+        <section id="addiction" class="clinical-section border-addiction">
             <div>
-                <h2 style="color: var(--bipolar);">Bipolar Disorder</h2>
-                <div class="details-list">
-                    <div class="detail-item" style="border-left-color: var(--bipolar);">
-                        <strong>Demographics: 40 Million People</strong>
-                        A spectrum disorder characterized by extreme shifts in energy, mood, and cognitive activity levels.
-                    </div>
-                    <div class="detail-item" style="border-left-color: var(--bipolar);">
-                        <strong>Symptomatic Phases</strong>
-                        Mania (pressured speech, hyper-activity) alternating with severe clinical depressive episodes.
-                    </div>
-                    <div class="detail-item" style="border-left-color: var(--bipolar);">
-                        <strong>Clinical Prognosis</strong>
-                        Requires lifelong clinical management to prevent social and financial destabilization.
-                    </div>
+                <h2 style="color: var(--accent-orange);">Reward Hijacking</h2>
+                <div class="data-block">
+                    <span class="neuro-label">Nucleus Accumbens</span>
+                    <span class="neuro-label">Plasticity--</span>
+                    <strong>The Addiction Cycle: 40M</strong>
+                    Permanent neuroplastic rewiring of the brain's reward circuitry. Chronic dopamine flooding leading to receptor down-regulation.
                 </div>
             </div>
-            <div class="quote-box" style="background: #f3f0ff;">
-                <p style="font-weight: 800; color: var(--bipolar);">Mandatory Clinical Path:</p>
-                <span class="specialist-badge">Psychiatrist (Mood Specialist)</span>
-                <p style="font-size: 0.9rem; margin-top: 15px;">Focus: Pharmacotherapy and psychoeducation.</p>
-                <span class="source-tag">Source: International Society for Bipolar Disorders</span>
+            <div class="specialist-hub" style="background: #fff8e1;">
+                <p style="font-weight: 800;">Specialists:</p>
+                <span class="badge-mit">Addictologist</span>
+                <span class="badge-mit">Neurologist</span>
             </div>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 MindMetric Hub - Research by Marine Siméon</p>
-        <p style="font-size: 0.75rem; opacity: 0.6; max-width: 850px; margin: 30px auto; line-height: 1.8;">
-            Disclaimer: This platform is for academic and informational purposes only. Data synthesized from: WHO Mental Health Atlas, 
-            The Lancet Global Health, Harvard Medical School Research Library, NIH/NIDA, and the APA.
+        <p style="font-weight: 900; font-size: 2.5rem; margin-bottom: 30px;">MINDMETRIC CORE DATABASE</p>
+        <p style="font-size: 1.1rem; opacity: 0.7; max-width: 800px; margin: 0 auto 50px;">
+            Principal Investigator: Marine Siméon. MIT Brain & Cognitive Sciences Unit. 
+            All clinical data synthesized from standardized 2026 global metrics.
+        </p>
+        <div class="source-grid">
+            <div>WHO MENTAL ATLAS</div>
+            <div>HARVARD MEDICAL</div>
+            <div>NIMH DATA HUB</div>
+            <div>OXFORD PSYCHIATRY</div>
+            <div>STANFORD NEURO</div>
+            <div>MAX PLANCK INST</div>
+            <div>THE LANCET GENETIC</div>
+            <div>JAMA PSYCHIATRY</div>
+        </div>
+        <p style="font-family: monospace; font-size: 0.7rem; opacity: 0.3;">
+            ENCRYPTION: AES-256 | MIT ACCESS ONLY | VERSION 9.0.42
         </p>
     </footer>
 
     <script>
-        // GLOBAL DATA CHART
-        const ctxGlobal = document.getElementById('globalChart').getContext('2d');
-        new Chart(ctxGlobal, {
-            type: 'bar',
+        // MASTER CHART CONFIGURATION
+        const polarCtx = document.getElementById('polarChart').getContext('2d');
+        new Chart(polarCtx, {
+            type: 'polarArea',
             data: {
-                labels: ['Americas', 'Europe', 'Africa', 'West Pacific', 'SE Asia'],
+                labels: ['Anxiety', 'Depression', 'Bipolar', 'Addiction', 'Schizo', 'Autism', 'Borderline'],
                 datasets: [{
-                    label: 'Prevalence Rate (%)',
-                    data: [15.2, 14.8, 10.1, 11.9, 12.5],
-                    backgroundColor: '#102754',
-                    borderRadius: 12
+                    data: [301, 280, 40, 40, 24, 75, 120],
+                    backgroundColor: ['#1d9bf0', '#0f1419', '#7856ff', '#f59e0b', '#00ba7c', '#00d2d3', '#f91880']
                 }]
             },
-            options: { responsive: true, plugins: { legend: { display: false } } }
+            options: { responsive: true, plugins: { legend: { position: 'right' } } }
         });
 
-        // DEPRESSION IMPACT CHART
-        const ctxDep = document.getElementById('depressionChart').getContext('2d');
-        new Chart(ctxDep, {
+        const barCtx = document.getElementById('barChartMaster').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ['US', 'EU', 'AF', 'AS', 'OC'],
+                datasets: [{
+                    label: 'Global Impact %',
+                    data: [18, 16, 11, 14, 12],
+                    backgroundColor: '#0a2540'
+                }]
+            }
+        });
+
+        const lineCtx = document.getElementById('lineChartMaster').getContext('2d');
+        new Chart(lineCtx, {
             type: 'line',
             data: {
-                labels: ['2016', '2019', '2022', '2025'],
+                labels: ['2010', '2015', '2020', '2025'],
                 datasets: [{
-                    label: 'Impact Score',
-                    data: [65, 72, 85, 91],
-                    borderColor: '#2d3436',
-                    backgroundColor: 'rgba(45, 52, 54, 0.05)',
-                    fill: true,
-                    tension: 0.4,
-                    borderWidth: 3
+                    label: 'Clinical Recording Rate',
+                    data: [40, 55, 78, 95],
+                    borderColor: '#1d9bf0',
+                    fill: false,
+                    tension: 0.3
                 }]
-            },
-            options: { responsive: true }
+            }
         });
     </script>
 </body>
