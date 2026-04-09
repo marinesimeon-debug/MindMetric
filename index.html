@@ -3,186 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindMetric | Global Data Synthesis</title>
+    <title>MindMetric | Global Research Hub by Marine Siméon</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --brand: #2d3436;
-            --accent: #0984e3;
-            --info: #00b894; /* Vert pour une approche plus positive */
-            --bg: #f4f7f6;
-            --white: #ffffff;
+            --bg: #f8f9fa;
+            --text: #2d3436;
+            --anxiety: #0984e3;    /* Blue */
+            --depression: #2d3436; /* Black */
+            --anger: #d63031;      /* Red */
+            --bipolar: #6c5ce7;    /* Purple */
         }
         
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background-color: var(--bg);
-            color: var(--brand);
-            margin: 0;
-            padding: 20px;
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
+
+        nav { background: rgba(255,255,255,0.95); padding: 15px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; justify-content: center; gap: 20px; }
+        nav a { text-decoration: none; color: var(--text); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
+        nav a:hover { color: var(--anxiety); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+        header { text-align: center; padding: 100px 20px; background: white; border-bottom: 1px solid #eee; }
+        header h1 { font-size: 5rem; margin: 0; letter-spacing: -4px; }
+        .author-badge { color: var(--anxiety); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+
+        .section-box { 
+            background: white; border-radius: 25px; padding: 50px; margin: 40px 0; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
         }
 
-        .container { max-width: 1100px; margin: 0 auto; }
+        .section-box h2 { font-size: 2.8rem; margin-top: 0; }
+        .detail-item { background: #f1f2f6; padding: 15px; border-radius: 12px; margin-bottom: 10px; border-left: 4px solid #ddd; }
+        .detail-item strong { display: block; color: var(--text); }
 
-        header {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--accent);
-        }
+        .anxiety-card { border-top: 10px solid var(--anxiety); }
+        .depression-card { border-top: 10px solid var(--depression); }
+        .anger-card { border-top: 10px solid var(--anger); }
+        .bipolar-card { border-top: 10px solid var(--bipolar); }
 
-        h1 { margin: 0; font-size: 1.8rem; letter-spacing: -1px; }
-        .tagline { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
-
-        .stats-summary {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .stat-card {
-            background: var(--white);
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            border-bottom: 3px solid var(--accent);
-        }
-
-        .stat-number { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
-        .stat-label { font-size: 0.8rem; color: #636e72; font-weight: 600; }
-
-        .main-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
-        }
-
-        .chart-container, .analysis-container {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .chart-container h3, .analysis-container h3 {
-            margin-top: 0;
-            font-size: 1.1rem;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        .insight-box {
-            background: #e3f2fd;
-            border-left: 4px solid var(--accent);
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            font-size: 0.95rem;
-        }
-
-        .data-point {
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px dashed #eee;
-            font-size: 0.9rem;
-        }
-
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #b2bec3;
-            padding-bottom: 40px;
-        }
-
-        @media (max-width: 800px) { .main-grid { grid-template-columns: 1fr; } }
+        footer { background: var(--text); color: white; padding: 60px 20px; text-align: center; }
+        @media (max-width: 900px) { .section-box { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
+    <nav>
+        <a href="#global">GLOBAL DATA</a>
+        <a href="#anxiety">ANXIETY</a>
+        <a href="#depression">DEPRESSION</a>
+        <a href="#anger">IMPULSE</a>
+        <a href="#bipolar">BIPOLAR</a>
+    </nav>
+
+    <header>
+        <span class="author-badge">Independent Research Synthesis by Marine Siméon</span>
+        <h1>MindMetric.</h1>
+        <p>A centralized hub for global psychiatric data and clinical prevalence (WHO & Harvard Sources).</p>
+    </header>
+
     <div class="container">
-        <header>
-            <span class="tagline">Independent Research Synthesis</span>
-            <h1>MindMetric. Data Project</h1>
-            <p>Compiling global health statistics to better understand psychological trends.</p>
-        </header>
 
-        <div class="stats-summary">
-            <div class="stat-card">
-                <div class="stat-number">WHO</div>
-                <div class="stat-label">Primary Source</div>
+        <section id="global" class="section-box" style="grid-template-columns: 1fr;">
+            <div style="text-align: center;">
+                <h2>Global Lifetime Prevalence</h2>
+                <p>Analysis of data from 29 countries. This chart compiles WHO reports to demonstrate the real statistical impact by region.</p>
+                <canvas id="globalChart" style="max-height: 400px;"></canvas>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">Harvard</div>
-                <div class="stat-label">Reference Studies</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">301M</div>
-                <div class="stat-label">People with Anxiety</div>
-            </div>
-        </div>
+        </section>
 
-        <div class="main-grid">
-            <div class="chart-container">
-                <h3>Regional Lifetime Risk Metrics</h3>
-                <canvas id="mainChart"></canvas>
-                <p style="font-size: 0.85rem; color: #636e72; margin-top: 20px;">
-                    <em>This graph displays global data compiled from various official health reports to show regional trends.</em>
-                </p>
-            </div>
-
-            <div class="analysis-container">
-                <h3>Key Research Findings</h3>
-                
-                <div class="insight-box">
-                    <strong>Global Impact:</strong> Analyzing data from 29 countries shows that mental health is a major factor in overall public health, regardless of the economy.
-                </div>
-
-                <div class="data-list">
-                    <div class="data-point">
-                        <strong>Early Indicators:</strong> According to Harvard-based references, many symptoms begin to manifest before the age of 24.
+        <section id="anxiety" class="section-box anxiety-card">
+            <div>
+                <h2 style="color: var(--anxiety);">Anxiety</h2>
+                <p>The most common mental health disorder worldwide according to World Health Organization data.</p>
+                <div class="details-list">
+                    <div class="detail-item" style="border-left-color: var(--anxiety);">
+                        <strong>Massive Impact: 301 Million Cases</strong>
+                        Affecting a growing portion of the youth population, particularly within academic environments.
                     </div>
-                    <div class="data-point">
-                        <strong>Anxiety Focus:</strong> WHO data highlights anxiety as the most prevalent disorder, affecting millions across all demographics.
-                    </div>
-                    <div class="data-point">
-                        <strong>The Goal:</strong> By centralizing these diverse studies, we can create a clearer map for student awareness.
+                    <div class="detail-item" style="border-left-color: var(--anxiety);">
+                        <strong>Critical Onset Age: Before 24</strong>
+                        Studies indicate that the majority of anxiety disorders solidify during the transition into adulthood.
                     </div>
                 </div>
             </div>
-        </div>
+            <div style="background: #e3f2fd; border-radius: 20px; padding: 30px; display: flex; align-items: center; justify-content: center;">
+                 <p style="font-weight: bold; color: var(--anxiety); text-align: center;">"Anxiety is not just a passing fear; it is a systemic brain response to persistent uncertainty."</p>
+            </div>
+        </section>
 
-        <footer>
-            <p>Project by <strong>Marine Siméon</strong> • Data compiled from WHO and Harvard University health portals</p>
-            <p><em>Disclaimer: This site is a student project. Information is sourced from public health reports.</em></p>
-        </footer>
-    </div>
+        <section id="depression" class="section-box depression-card">
+            <div>
+                <h2 style="color: var(--depression);">Clinical Depression</h2>
+                <p>Deep clinical analysis based on Harvard Medical School research findings.</p>
+                <div class="details-list">
+                    <div class="detail-item" style="border-left-color: var(--depression);">
+                        <strong>WHO Statistics: 280 Million</strong>
+                        Depression is the leading cause of disability worldwide, impacting global GDP by nearly $1 trillion annually.
+                    </div>
+                    <div class="detail-item" style="border-left-color: var(--depression);">
+                        <strong>Risk Factor: 1 in 2 People</strong>
+                        Comprehensive data synthesis suggests that the risk of developing a mood disorder during a lifetime is exceptionally high.
+                    </div>
+                </div>
+            </div>
+            <canvas id="depressionChart"></canvas>
+        </section>
 
-    <script>
-        const ctx = document.getElementById('mainChart');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Africa', 'Americas', 'SE Asia', 'Europe', 'E. Med', 'W. Pacific'],
-                datasets: [{
-                    label: 'Prevalence %',
-                    data: [11.2, 18.5, 12.1, 16.8, 14.3, 10.9],
-                    backgroundColor: '#0984e3',
-                    borderRadius: 4
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: { legend: { display: false } },
-                scales: {
-                    y: { beginAtZero: true, grid: { color: '#f0f0f0' } },
-                    x: { grid: { display: false } }
-                }
-            }
-        });
-    </script>
-</body>
-</html>
+        <section id="anger" class="section-box anger-card">
+            <div>
+                <h2 style="color: var(--anger);">Anger & Impulse</h2>
+                <p>Focusing on impulse control disorders and the management of chronic irritability.</p>
+                <div class="details-list">
+                    <div class="detail-item" style="border-left-color: var(--anger);">
+                        <strong>Neurobiology:</strong>
+                        Direct correlation with prefrontal cortex regulation and amygdala responses.
+                    </div>
+                    <div class="detail-item" style="border-left-color: var(--anger);">
+                        <strong>Manifestation:</strong>
+                        Intermittent Explosive Disorder often affects young adults, impacting social and professional integration.
+                    </div>
+                </div>
+            </div>
+            <div style="background: #fff5f5; padding: 20px; border-radius: 15px; border: 2px dashed var(--anger);">
+                <h4 style="color: var(--anger);">Data Alert:</h4>
+                <p>Impulsivity is frequently the primary signal for more complex, undiagnosed psychological conditions.</p>
+            </div>
+        </section>
+
+        <section id="bipolar" class="section-box bipolar-card">
+            <div>
+                <h2 style="color: var(--bipolar);">Bipolar Disorder</h2>
+                <p>Understanding the cyclical nature of mood regulation and neurotransmitter patterns.</p>
+                <div class="details-list">
+                    <div class="detail-item" style="border-left-color: var(--bipolar);">
+                        <strong>Global Prevalence: 40 Million</strong>
+                        A complex disorder characterized by alternating manic and depressive episodes.
+                    </div>
+                    <div class="detail-item" style="border-left-color: var(--bipolar);">
+                        <strong>Diagnostic Research:</strong>
+                        Requires long-term data
