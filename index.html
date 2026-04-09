@@ -4,19 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MindMetric | Global Research Hub by Marine Siméon</title>
-    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --bg: #f8f9fa;
             --text: #2d3436;
-            --anxiety: #0984e3;
-            --depression: #2d3436;
-            --anger: #d63031;
-            --bipolar: #6c5ce7;
-            --navy: #102754;
+            --anxiety: #0984e3;    /* Blue */
+            --depression: #2d3436; /* Black */
+            --anger: #d63031;      /* Red */
+            --bipolar: #6c5ce7;    /* Purple */
+            --navy: #102754;       /* Navy Blue for Chart */
         }
         
         html { scroll-behavior: smooth; }
@@ -28,7 +26,7 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
 
-        header { text-align: center; padding: 80px 20px; background: white; border-bottom: 1px solid #eee; }
+        header { text-align: center; padding: 100px 20px; background: white; border-bottom: 1px solid #eee; }
         header h1 { font-size: 5rem; margin: 0; letter-spacing: -4px; }
         .author-badge { color: var(--anxiety); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
 
@@ -47,8 +45,6 @@
         .anger-card { border-top: 10px solid var(--anger); }
         .bipolar-card { border-top: 10px solid var(--bipolar); }
 
-        .chart-wrapper { max-width: 800px; margin: 20px auto; }
-
         footer { background: var(--text); color: white; padding: 60px 20px; text-align: center; }
         @media (max-width: 900px) { .section-box { grid-template-columns: 1fr; } }
     </style>
@@ -66,7 +62,7 @@
     <header>
         <span class="author-badge">Independent Research Synthesis by Marine Siméon</span>
         <h1>MindMetric.</h1>
-        <p>A centralized hub for global psychiatric data (WHO & Harvard Sources).</p>
+        <p>A centralized hub for global psychiatric data and clinical prevalence (WHO & Harvard Sources).</p>
     </header>
 
     <div class="container">
@@ -74,8 +70,8 @@
         <section id="global" class="section-box" style="grid-template-columns: 1fr;">
             <div style="text-align: center;">
                 <h2>Global Lifetime Prevalence</h2>
-                <p>WHO reports demonstrating statistical impact by region.</p>
-                <div class="chart-wrapper">
+                <p>Analysis of data from 29 countries. This chart compiles WHO reports to demonstrate the real statistical impact by region.</p>
+                <div style="max-width: 800px; margin: auto;">
                     <canvas id="globalChart"></canvas>
                 </div>
             </div>
@@ -84,58 +80,93 @@
         <section id="anxiety" class="section-box anxiety-card">
             <div>
                 <h2 style="color: var(--anxiety);">Anxiety</h2>
-                <p>301 Million Cases worldwide.</p>
-                <div class="detail-item" style="border-left-color: var(--anxiety);">
-                    <strong>Academic Impact</strong>
-                    Significant correlation with youth academic environments.
+                <p>The most common mental health disorder worldwide according to World Health Organization data.</p>
+                <div class="details-list">
+                    <div class="detail-item" style="border-left-color: var(--anxiety);">
+                        <strong>Massive Impact: 301 Million Cases</strong>
+                        Affecting a growing portion of the youth population, particularly within academic environments.
+                    </div>
+                    <div class="detail-item" style="border-left-color: var(--anxiety);">
+                        <strong>Critical Onset Age: Before 24</strong>
+                        Studies indicate that the majority of anxiety disorders solidify during the transition into adulthood.
+                    </div>
                 </div>
             </div>
             <div style="background: #e3f2fd; border-radius: 20px; padding: 30px; display: flex; align-items: center; justify-content: center;">
-                 <p style="font-weight: bold; color: var(--anxiety); text-align: center;">"Brain response to uncertainty."</p>
+                 <p style="font-weight: bold; color: var(--anxiety); text-align: center;">"Anxiety is not just a passing fear; it is a systemic brain response to persistent uncertainty."</p>
             </div>
         </section>
 
         <section id="depression" class="section-box depression-card">
             <div>
                 <h2 style="color: var(--depression);">Clinical Depression</h2>
-                <p>Harvard Medical School clinical findings.</p>
-                <div class="chart-wrapper">
-                    <canvas id="depressionChart"></canvas>
+                <p>Deep clinical analysis based on Harvard Medical School research findings.</p>
+                <div class="details-list">
+                    <div class="detail-item" style="border-left-color: var(--depression);">
+                        <strong>WHO Statistics: 280 Million</strong>
+                        Depression is the leading cause of disability worldwide, impacting global GDP by nearly $1 trillion annually.
+                    </div>
+                    <div class="detail-item" style="border-left-color: var(--depression);">
+                        <strong>Risk Factor: 1 in 2 People</strong>
+                        Comprehensive data synthesis suggests that the risk of developing a mood disorder during a lifetime is exceptionally high.
+                    </div>
                 </div>
             </div>
-            <div style="display: flex; align-items: center; justify-content: center;">
-                <p>Leading cause of global disability.</p>
+            <div style="padding: 20px;">
+                <canvas id="depressionChart"></canvas>
             </div>
         </section>
 
         <section id="anger" class="section-box anger-card">
             <div>
                 <h2 style="color: var(--anger);">Anger & Impulse</h2>
-                <p>Prefrontal cortex regulation data.</p>
+                <p>Focusing on impulse control disorders and the management of chronic irritability.</p>
+                <div class="details-list">
+                    <div class="detail-item" style="border-left-color: var(--anger);">
+                        <strong>Neurobiology:</strong>
+                        Direct correlation with prefrontal cortex regulation and amygdala responses.
+                    </div>
+                    <div class="detail-item" style="border-left-color: var(--anger);">
+                        <strong>Manifestation:</strong>
+                        Intermittent Explosive Disorder often affects young adults, impacting social and professional integration.
+                    </div>
+                </div>
             </div>
-            <div style="background: #fff5f5; border-radius: 20px; padding: 30px; border: 2px dashed var(--anger);">
-                <p style="color: var(--anger); font-weight: bold; text-align: center;">Impulse control disorder markers.</p>
+            <div style="background: #fff5f5; padding: 20px; border-radius: 15px; border: 2px dashed var(--anger); display: flex; flex-direction: column; justify-content: center;">
+                <h4 style="color: var(--anger); margin-top: 0;">Data Alert:</h4>
+                <p>Impulsivity is frequently the primary signal for more complex, undiagnosed psychological conditions.</p>
             </div>
         </section>
 
         <section id="bipolar" class="section-box bipolar-card">
             <div>
                 <h2 style="color: var(--bipolar);">Bipolar Disorder</h2>
-                <p>Cyclical mood regulation patterns.</p>
+                <p>Understanding the cyclical nature of mood regulation and neurotransmitter patterns.</p>
+                <div class="details-list">
+                    <div class="detail-item" style="border-left-color: var(--bipolar);">
+                        <strong>Global Prevalence: 40 Million</strong>
+                        A complex disorder characterized by alternating manic and depressive episodes.
+                    </div>
+                    <div class="detail-item" style="border-left-color: var(--bipolar);">
+                        <strong>Diagnostic Research:</strong>
+                        Requires long-term data tracking for accurate clinical intervention.
+                    </div>
+                </div>
             </div>
-            <div style="background: #f3f0ff; border-radius: 20px; padding: 30px;">
-                <p style="font-weight: bold; color: var(--bipolar); text-align: center;">Energy regulation spectrum.</p>
+            <div style="background: #f3f0ff; border-radius: 20px; padding: 30px; display: flex; align-items: center; justify-content: center;">
+                <p style="font-weight: bold; color: var(--bipolar); text-align: center;">"Bipolarity is a spectrum of energy regulation, not just mood swings."</p>
            </div>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 MindMetric Hub - Marine Siméon</p>
+        <p>&copy; 2026 MindMetric Hub - Independent Research Synthesis by Marine Siméon</p>
+        <p style="font-size: 0.7rem; opacity: 0.6;">Data sourced from WHO Global Health Estimates & Harvard Medical Research.</p>
     </footer>
 
     <script>
-        // Graphique Global (Colonnes Bleu Marine unies)
+        // Graphique Global : Colonnes Marine unies
         const ctxGlobal = document.getElementById('globalChart').getContext('2d');
         new Chart(ctxGlobal, {
             type: 'bar',
@@ -145,13 +176,15 @@
                     label: 'Prevalence %',
                     data: [15.2, 14.8, 10.1, 11.9, 12.5],
                     backgroundColor: '#102754', 
+                    borderColor: '#0a1a38',
+                    borderWidth: 1,
                     borderRadius: 5
                 }]
             },
             options: { responsive: true, plugins: { legend: { display: false } } }
         });
 
-        // Graphique Dépression
+        // Graphique Dépression (Ligne)
         const ctxDep = document.getElementById('depressionChart').getContext('2d');
         new Chart(ctxDep, {
             type: 'line',
@@ -161,7 +194,8 @@
                     label: 'Impact Score',
                     data: [65, 72, 85, 91],
                     borderColor: '#2d3436',
-                    fill: false,
+                    backgroundColor: 'rgba(45, 52, 54, 0.05)',
+                    fill: true,
                     tension: 0.3
                 }]
             },
