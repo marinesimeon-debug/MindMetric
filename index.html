@@ -16,121 +16,65 @@
             --depression: #2d3436;
             --anger: #d63031;
             --bipolar: #6c5ce7;
-            --navy: #102754;
             --schizo: #00b894;
             --addiction: #e67e22;
             --adhd: #4b6584;
             --ptsd: #eb3b5a;
             --autism: #2bcbba;
             --eating: #fd9644;
+            --ocd: #82589F;
+            --borderline: #f7b731;
+            --sleep: #45aaf2;
         }
         
         html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg); 
-            color: var(--text); 
-            margin: 0; 
-            line-height: 1.7; 
-        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; line-height: 1.7; }
 
         nav { 
-            background: rgba(255,255,255,0.95); 
-            padding: 15px; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-            display: flex; 
-            justify-content: center; 
-            gap: 15px;
-            flex-wrap: wrap;
+            background: rgba(255,255,255,0.95); padding: 15px; position: sticky; top: 0; 
+            z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
         }
 
-        nav a { 
-            text-decoration: none; 
-            color: var(--text); 
-            font-weight: 700; 
-            font-size: 0.7rem; 
-            text-transform: uppercase; 
-            letter-spacing: 1px;
-        }
+        nav a { text-decoration: none; color: var(--text); font-weight: 700; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
 
-        header { 
-            text-align: center; 
-            padding: 120px 20px; 
-            background: white; 
-            border-bottom: 1px solid #eee; 
-        }
-
+        header { text-align: center; padding: 100px 20px; background: white; border-bottom: 1px solid #eee; }
         header h1 { font-size: 5.5rem; margin: 0; letter-spacing: -5px; line-height: 0.9; }
 
         .section-box { 
-            background: white; 
-            border-radius: 30px; 
-            padding: 60px; 
-            margin: 50px 0; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 50px;
+            background: white; border-radius: 30px; padding: 60px; margin: 50px 0; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04); display: grid; 
+            grid-template-columns: 1fr 1fr; gap: 50px;
         }
 
-        .section-box h2 { font-size: 2.8rem; margin-top: 0; }
+        .section-box h2 { font-size: 2.8rem; margin-top: 0; margin-bottom: 10px; }
         
-        .detail-item { 
-            background: #f8f9fa; 
-            padding: 22px; 
-            border-radius: 15px; 
-            margin-bottom: 20px; 
-            border-left: 6px solid #ddd; 
-        }
-
+        .detail-item { background: #f8f9fa; padding: 22px; border-radius: 15px; margin-bottom: 15px; border-left: 6px solid #ddd; }
         .detail-item strong { display: block; color: var(--text); font-size: 1.1rem; margin-bottom: 5px; }
 
-        .specialist-badge { 
-            display: inline-block; 
-            background: var(--text); 
-            color: white; 
-            padding: 8px 15px; 
-            border-radius: 30px; 
-            font-size: 0.75rem; 
-            margin-top: 10px; 
-            font-weight: 700; 
-            margin-right: 5px;
-        }
+        .specialist-badge { display: inline-block; background: var(--text); color: white; padding: 8px 15px; border-radius: 30px; font-size: 0.75rem; font-weight: 700; margin: 5px 5px 0 0; }
 
-        /* CARD BORDERS */
+        /* PATHOLOGY COLORS */
         .anxiety-card { border-top: 12px solid var(--anxiety); }
         .depression-card { border-top: 12px solid var(--depression); }
-        .anger-card { border-top: 12px solid var(--anger); }
-        .bipolar-card { border-top: 12px solid var(--bipolar); }
-        .schizo-card { border-top: 12px solid var(--schizo); }
-        .addiction-card { border-top: 12px solid var(--addiction); }
-        .adhd-card { border-top: 12px solid var(--adhd); }
-        .ptsd-card { border-top: 12px solid var(--ptsd); }
         .eating-card { border-top: 12px solid var(--eating); }
+        .ocd-card { border-top: 12px solid var(--ocd); }
+        .borderline-card { border-top: 12px solid var(--borderline); }
+        .autism-card { border-top: 12px solid var(--autism); }
+        .bipolar-card { border-top: 12px solid var(--bipolar); }
 
         footer { background: var(--text); color: white; padding: 60px 20px; text-align: center; }
-
         @media (max-width: 950px) { .section-box { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#global">GLOBAL</a>
-        <a href="#anxiety">ANXIETY</a>
-        <a href="#depression">DEPRESSION</a>
-        <a href="#eating">EATING DISORDERS</a>
-        <a href="#anger">IMPULSE</a>
-        <a href="#bipolar">BIPOLAR</a>
-        <a href="#schizo">SCHIZO</a>
-        <a href="#addiction">ADDICTION</a>
-        <a href="#adhd">ADHD</a>
-        <a href="#ptsd">PTSD</a>
+        <a href="#anxiety">ANXIETY</a> <a href="#depression">DEPRESSION</a> <a href="#eating">EATING</a> 
+        <a href="#ocd">OCD</a> <a href="#borderline">BORDERLINE</a> <a href="#autism">AUTISM</a> 
+        <a href="#bipolar">BIPOLAR</a> <a href="#schizo">SCHIZO</a> <a href="#addiction">ADDICTION</a>
     </nav>
 
     <header>
@@ -140,16 +84,6 @@
     </header>
 
     <div class="container">
-
-        <section id="global" class="section-box" style="grid-template-columns: 1fr;">
-            <div style="text-align: center;">
-                <h2>Global Lifetime Prevalence</h2>
-                <p>Comparative analysis across 29 nations (WHO Standardized Model).</p>
-                <div style="max-width: 900px; margin: 40px auto;">
-                    <canvas id="globalChart"></canvas>
-                </div>
-            </div>
-        </section>
 
         <section id="anxiety" class="section-box anxiety-card">
             <div>
@@ -167,11 +101,7 @@
                     Muscle tension, autonomic arousal (sweating, heart rate variability), and chronic sleep onset latency.
                 </div>
             </div>
-            <div style="text-align: center;">
-                <canvas id="anxietyChart"></canvas>
-                <span class="specialist-badge">Psychologist</span>
-                <span class="specialist-badge">CBT Therapist</span>
-            </div>
+            <div style="text-align: center;"><canvas id="anxietyChart"></canvas></div>
         </section>
 
         <section id="eating" class="section-box eating-card">
@@ -190,11 +120,56 @@
                     Anorexia has one of the highest mortality rates of any psychiatric condition due to medical complications.
                 </div>
             </div>
-            <div style="text-align: center;">
-                <canvas id="eatingChart"></canvas>
-                <span class="specialist-badge">Dietitian</span>
-                <span class="specialist-badge">Psychotherapist</span>
+            <div style="text-align:center;"><canvas id="eatingChart"></canvas></div>
+        </section>
+
+        <section id="ocd" class="section-box ocd-card">
+            <div>
+                <h2 style="color: var(--ocd);">OCD</h2>
+                <div class="detail-item" style="border-left-color: var(--ocd);">
+                    <strong>The CSTC Circuit</strong>
+                    Dysfunction in the Cortico-Striato-Thalamo-Cortical loop, leading to inability to "gate" intrusive thoughts.
+                </div>
+                <div class="detail-item" style="border-left-color: var(--ocd);">
+                    <strong>Obsession/Compulsion</strong>
+                    Persistent thoughts (obsessions) followed by ritualistic acts (compulsions) performed to reduce distress.
+                </div>
             </div>
+            <div style="background:#f3ebff; padding:30px; border-radius:20px; text-align:center;">
+                <span class="specialist-badge">ERP Specialist</span>
+            </div>
+        </section>
+
+        <section id="borderline" class="section-box borderline-card">
+            <div>
+                <h2 style="color: var(--borderline);">Borderline PD</h2>
+                <div class="detail-item" style="border-left-color: var(--borderline);">
+                    <strong>Emotional Dysregulation</strong>
+                    Pervasive instability in mood, self-image, and interpersonal relationships.
+                </div>
+                <div class="detail-item" style="border-left-color: var(--borderline);">
+                    <strong>Limbic Hyper-reactivity</strong>
+                    High sensitivity to rejection or abandonment, often linked to amygdala over-firing.
+                </div>
+            </div>
+            <div style="background:#fffcf0; padding:30px; border-radius:20px; text-align:center;">
+                <span class="specialist-badge">DBT Therapist</span>
+            </div>
+        </section>
+
+        <section id="autism" class="section-box autism-card">
+            <div>
+                <h2 style="color: var(--autism);">Autism Spectrum</h2>
+                <div class="detail-item" style="border-left-color: var(--autism);">
+                    <strong>Neuro-Connectivity</strong>
+                    Characterized by local over-connectivity and long-range under-connectivity in the brain.
+                </div>
+                <div class="detail-item" style="border-left-color: var(--autism);">
+                    <strong>Core Domains</strong>
+                    Challenges in social communication and repetitive/restricted patterns of behavior.
+                </div>
+            </div>
+            <div style="text-align:center;"><canvas id="autismChart"></canvas></div>
         </section>
 
         <section id="depression" class="section-box depression-card">
@@ -213,13 +188,10 @@
                     Impairment in processing speed, attention, and executive function.
                 </div>
             </div>
-            <div style="text-align:center;">
-                <canvas id="depressionChart"></canvas>
-                <span class="specialist-badge">Psychiatrist</span>
-            </div>
+            <div style="text-align:center;"><canvas id="depressionChart"></canvas></div>
         </section>
 
-        <section id="anger" class="section-box anger-card">
+        <section id="anger" class="section-box anger-card" style="border-top:12px solid var(--anger)">
             <div>
                 <h2 style="color: var(--anger);">Anger & Impulse</h2>
                 <div class="detail-item" style="border-left-color: var(--anger);">
@@ -231,95 +203,9 @@
                     Low serotonin levels in the orbitofrontal cortex and anterior cingulate cortex.
                 </div>
             </div>
-            <div style="background:#fff5f5; border-radius:20px; padding:30px; text-align:center;">
-                <p style="font-weight:800; color:var(--anger);">Diagnosis Marker:</p>
-                <p>Abrupt onset of aggressive episodes lasting less than 30 minutes.</p>
+            <div style="background:#fff5f5; padding:30px; border-radius:20px; text-align:center;">
+                <p><strong>Diagnosis:</strong> Abrupt episodes lasting < 30 min.</p>
                 <span class="specialist-badge">Neuropsychologist</span>
-            </div>
-        </section>
-
-        <section id="bipolar" class="section-box bipolar-card">
-            <div>
-                <h2 style="color: var(--bipolar);">Bipolar Disorder</h2>
-                <div class="detail-item" style="border-left-color: var(--bipolar);">
-                    <strong>Mood Oscillations</strong>
-                    Alternating between Mania/Hypomania (elevated energy) and severe Depressive episodes.
-                </div>
-                <div class="detail-item" style="border-left-color: var(--bipolar);">
-                    <strong>Genetic Heritability</strong>
-                    One of the most heritable conditions (estimated 80-85%).
-                </div>
-            </div>
-            <div style="text-align:center;">
-                <canvas id="bipolarChart"></canvas>
-            </div>
-        </section>
-
-        <section id="schizo" class="section-box schizo-card">
-            <div>
-                <h2 style="color: var(--schizo);">Schizophrenia</h2>
-                <div class="detail-item" style="border-left-color: var(--schizo);">
-                    <strong>Positive Symptoms</strong>
-                    Delusions, hallucinations (mostly auditory), and disorganized thinking.
-                </div>
-                <div class="detail-item" style="border-left-color: var(--schizo);">
-                    <strong>Negative Symptoms</strong>
-                    Social withdrawal, apathy, and cognitive blunting.
-                </div>
-            </div>
-            <div style="background:#e8f8f5; padding:30px; border-radius:20px; text-align:center;">
-                <span class="specialist-badge">Neuro-Psychiatrist</span>
-            </div>
-        </section>
-
-        <section id="addiction" class="section-box addiction-card">
-            <div>
-                <h2 style="color: var(--addiction);">Addictive Behavior</h2>
-                <div class="detail-item" style="border-left-color: var(--addiction);">
-                    <strong>Neuroplasticity</strong>
-                    Dopamine flooding leads to downregulation of D2 receptors, creating profound tolerance.
-                </div>
-                <div class="detail-item" style="border-left-color: var(--addiction);">
-                    <strong>The Cravings Circuit</strong>
-                    Compulsive seeking behavior driven by the Nucleus Accumbens and Amygdala.
-                </div>
-            </div>
-            <div style="text-align:center;">
-                <canvas id="addictionChart"></canvas>
-            </div>
-        </section>
-
-        <section id="adhd" class="section-box adhd-card">
-            <div>
-                <h2 style="color: var(--adhd);">ADHD Spectrum</h2>
-                <div class="detail-item" style="border-left-color: var(--adhd);">
-                    <strong>Executive Deficits</strong>
-                    Impoverished dopamine/norepinephrine signaling in the prefrontal cortex.
-                </div>
-                <div class="detail-item" style="border-left-color: var(--adhd);">
-                    <strong>Symptom Profile</strong>
-                    Inattention, emotional dysregulation, and hyperactivity.
-                </div>
-            </div>
-            <div style="background:#f1f2f6; padding:30px; border-radius:20px; text-align:center;">
-                <span class="specialist-badge">Pediatric Psychiatrist</span>
-            </div>
-        </section>
-
-        <section id="ptsd" class="section-box ptsd-card">
-            <div>
-                <h2 style="color: var(--ptsd);">PTSD / Trauma</h2>
-                <div class="detail-item" style="border-left-color: var(--ptsd);">
-                    <strong>Flashbacks & Re-experiencing</strong>
-                    Maladaptive consolidation of traumatic memories in the hippocampus.
-                </div>
-                <div class="detail-item" style="border-left-color: var(--ptsd);">
-                    <strong>Avoidance Patterns</strong>
-                    Avoiding internal or external cues associated with the trauma.
-                </div>
-            </div>
-            <div style="text-align:center;">
-                <span class="specialist-badge">EMDR Therapist</span>
             </div>
         </section>
 
@@ -327,84 +213,28 @@
 
     <footer>
         <p>&copy; 2026 MindMetric Hub - Research by Marine Siméon</p>
-        <p style="font-size: 0.7rem; opacity: 0.5;">Sources: WHO, The Lancet, APA, NIMH Databases.</p>
     </footer>
 
     <script>
-        // Graphiques identiques à ta version originale (Global, Anxiety, Eating, Depression, Bipolar, Addiction)
-        new Chart(document.getElementById('globalChart').getContext('2d'), {
-            type: 'bar',
-            data: {
-                labels: ['Americas', 'Europe', 'Africa', 'West Pacific', 'SE Asia'],
-                datasets: [{
-                    label: 'Prevalence (%)',
-                    data: [15.2, 14.8, 10.1, 11.9, 12.5],
-                    backgroundColor: '#102754',
-                    borderRadius: 10
-                }]
-            },
-            options: { responsive: true }
-        });
-
-        new Chart(document.getElementById('anxietyChart').getContext('2d'), {
+        // Charts restoration & New Charts
+        new Chart(document.getElementById('anxietyChart'), {
             type: 'doughnut',
-            data: {
-                labels: ['GAD', 'Panic', 'Social', 'Phobia'],
-                datasets: [{
-                    data: [40, 20, 25, 15],
-                    backgroundColor: ['#0984e3', '#74b9ff', '#81ecec', '#a29bfe']
-                }]
-            }
+            data: { labels: ['GAD', 'Panic', 'Social', 'Phobia'], datasets: [{ data: [40, 20, 25, 15], backgroundColor: ['#0984e3', '#74b9ff', '#81ecec', '#a29bfe'] }] }
         });
 
-        new Chart(document.getElementById('eatingChart').getContext('2d'), {
+        new Chart(document.getElementById('eatingChart'), {
             type: 'polarArea',
-            data: {
-                labels: ['Binge Eating', 'Bulimia', 'Anorexia', 'Other'],
-                datasets: [{
-                    data: [45, 25, 15, 15],
-                    backgroundColor: ['#fd9644', '#feb236', '#ff7f50', '#d35400']
-                }]
-            }
+            data: { labels: ['Binge', 'Bulimia', 'Anorexia', 'Other'], datasets: [{ data: [45, 25, 15, 15], backgroundColor: ['#fd9644', '#feb236', '#ff7f50', '#d35400'] }] }
         });
 
-        new Chart(document.getElementById('depressionChart').getContext('2d'), {
-            type: 'line',
-            data: {
-                labels: ['2016', '2019', '2022', '2025'],
-                datasets: [{
-                    label: 'Impact Score',
-                    data: [60, 68, 85, 92],
-                    borderColor: '#2d3436',
-                    fill: false,
-                    tension: 0.4
-                }]
-            }
-        });
-
-        new Chart(document.getElementById('bipolarChart').getContext('2d'), {
+        new Chart(document.getElementById('autismChart'), {
             type: 'radar',
-            data: {
-                labels: ['Genetics', 'Energy', 'Mood', 'Sleep', 'Cognition'],
-                datasets: [{
-                    label: 'Severity Factor',
-                    data: [90, 85, 95, 80, 70],
-                    borderColor: '#6c5ce7',
-                    backgroundColor: 'rgba(108, 92, 231, 0.1)'
-                }]
-            }
+            data: { labels: ['Social', 'Sensory', 'Routine', 'Special Interest', 'Communication'], datasets: [{ label: 'Profile', data: [80, 70, 95, 85, 75], borderColor: '#2bcbba', backgroundColor: 'rgba(43, 203, 186, 0.1)' }] }
         });
 
-        new Chart(document.getElementById('addictionChart').getContext('2d'), {
-            type: 'bar',
-            data: {
-                labels: ['Alcohol', 'Tobacco', 'Opioids', 'Behavioral'],
-                datasets: [{
-                    label: 'Global Dependency (%)',
-                    data: [5.1, 22.3, 1.2, 4.5],
-                    backgroundColor: '#e67e22'
-                }]
-            }
+        new Chart(document.getElementById('depressionChart'), {
+            type: 'line',
+            data: { labels: ['2016', '2019', '2022', '2025'], datasets: [{ label: 'Impact Score', data: [60, 68, 85, 92], borderColor: '#2d3436', tension: 0.4 }] }
         });
     </script>
 </body>
